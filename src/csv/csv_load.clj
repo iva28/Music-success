@@ -69,5 +69,14 @@
 (print (count (first modified-songs)))
 (println (first modified-songs))
 
-(def modified-column-names (concat (subvec csv-column-names first-award-column) ['Award']))
+(print (count csv-column-names))
+(print first-award-column)
+
+(defn modify-column-names
+  [songs first-award-column]
+  (map #(concat (subvec %  0 first-award-column) [(last %)]) songs))
+
+(subvec csv-column-names 0 first-award-column)
+(def modified-column-names (conj (subvec csv-column-names 0 first-award-column) "Won award"))
 (print modified-column-names)
+
