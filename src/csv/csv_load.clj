@@ -17,6 +17,7 @@
 
 ;Column names
 (def csv-column-names (vec (first stones-csv)))
+(def songs-only (rest stones-csv))
 (print csv-column-names)
 (count csv-column-names)
 
@@ -29,8 +30,29 @@
 
 ;columns for awards
 (subvec (second stones-csv) first-award-column (count csv-column-names))
-;check if second song has received some reward
-(some #(not= % "No") (subvec csv-column-names first-award-column (count csv-column-names)))
+;check if first song has received some reward
+(some #(not= % "No") (subvec (second stones-csv) first-award-column (count csv-column-names)))
+
+(def updated-first-song (if (some #(not= % "No") (subvec (second stones-csv) first-award-column (count csv-column-names)))
+                          (conj (second stones-csv) 1)
+                          (conj (second stones-csv) 0)))
+(print updated-first-song)
+
+
+(defn check-for-award
+  [seq]
+  (some #(not= % "No") (subvec seq first-award-column (count csv-column-names))))
+
+(defn add-award-flag-for-all
+  [songs]
+  (map #(if (check-for-award %)
+          (conj % 1)
+          (conj % 0)) songs))
+
+(def updated-songs-only (add-award-flag-for-all songs-only))
+(take 1 updated-songs-only)
+
+
 
 
 
