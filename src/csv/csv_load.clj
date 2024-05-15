@@ -27,3 +27,10 @@
 (def first-award-column (index-of-element-by-name csv-column-names "British charts"))
 (print first-award-column)
 
+;columns for awards
+(subvec (second stones-csv) first-award-column (count csv-column-names))
+;check if second song has received some reward
+(some #(not= % "No") (subvec csv-column-names first-award-column (count csv-column-names)))
+
+
+
