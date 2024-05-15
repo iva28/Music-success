@@ -69,4 +69,5 @@
 (print (count (first modified-songs)))
 (println (first modified-songs))
 
-
+(def modified-column-names (concat (subvec csv-column-names first-award-column) ['Award']))
+(print modified-column-names)
