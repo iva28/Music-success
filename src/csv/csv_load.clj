@@ -1,7 +1,8 @@
 (ns csv_load)
 
 (require '[clojure-csv.core :as csv]
-          '[clojure.java.io :as io])
+          '[clojure.java.io :as io]
+          '[clojure.string :as str])
 
 (defn read-csv
   [file_path]
@@ -80,3 +81,13 @@
 (def modified-column-names (conj (subvec csv-column-names 0 first-award-column) "Won award"))
 (print modified-column-names)
 
+;SAVING NEW CSV
+(defn save-modified-songs-csv [songs column-names filename]
+  (with-open [writer (io/writer filename)]
+    (.write writer (str/join "," column-names))
+    (.write writer "\n")
+    (doseq [song songs]
+      (.write writer (str/join "," song))
+      (.write writer "\n"))))
+
+(save-modified-songs-csv modified-songs modified-column-names "src/dataset/modified_stones.csv")
