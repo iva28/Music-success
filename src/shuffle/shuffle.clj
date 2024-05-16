@@ -20,6 +20,15 @@
 (print updated-second-words)
 
 ;Trial with list of lists
-(def first-list-list [[1 2 3] [3 4]])
-(def second-list-list (add-random-element-from-list first-list-words []))
-(print second-list-list)
+(def first-list-list [[1 2 3] ["Iva" 7] [5 6 7] ["Ana" 2 10]])
+(def second-list-list [[]])
+(def updated-second-list-list (add-random-element-from-list first-list-words []))
+(print updated-second-list-list)
+
+(defn add-random-element-from-list-of-list
+  [list-of-lists]
+  (let [shuffled-index (shuffle (range (count list-of-lists)))]
+    (mapv #(nth list-of-lists %) shuffled-index)))
+(add-random-element-from-list-of-list first-list-list)
+
+
