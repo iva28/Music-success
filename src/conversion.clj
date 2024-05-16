@@ -6,10 +6,8 @@
 (def stones-songs (rest stones-csv))
 
 (def first-song (first stones-songs))
-(def second-song (second stones-songs))
 
 (println-str first-song)
-(print (count first-song))
 
 (defn convert-to-float
   [x]
@@ -23,15 +21,20 @@
 (print (convert-to-float "I2"))
 
 (defn convert-to-float-in-list
-  [lst]
-  (mapv #(if-not (or (= %1 2) (= %1 (dec (count lst))))
-           (if (try (Float/parseFloat %2) (catch Exception e nil))
-             (try (Float/parseFloat %2) (catch Exception e %2))
-             %2)
-           %2)
-        (range) lst))
+  [seq]
+  (mapv #(if (or (= %1 2) (= %1 (dec (count seq))))
+           (try
+             (Integer/parseInt %2)
+             (catch Exception _ %2))
+           (try
+             (Float/parseFloat %2)
+             (catch Exception _ %2)))
+        (range) seq))
 
-(print (convert-to-float-in-list first-song))
+(def updated (convert-to-float-in-list first-song))
+(print updated)
+(doseq [el updated]
+  (println (type el)))
 
 ; Converting list of list
 (defn convert-to-float-list-of-lists

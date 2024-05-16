@@ -7,13 +7,13 @@
 
 (def stones-csv (read-csv "src/dataset/modified_stones.csv"))
 (def stones-songs (rest stones-csv))
+(def updated-stones-songs (convert-to-float-list-of-lists stones-songs))
 
-(def first-song (first stones-songs))
-(def second-song (second stones-songs))
+(def first-song (first updated-stones-songs))
 
-(def first-song (convert-to-float-in-list first-song))
-(def second-song (convert-to-float-in-list second-song))
-(doseq [el first-song]
-  (println (type el)))
-
-(calculate-euclidean-distance-csv first-song second-song)
+;(defn calculate-3-closest
+;  [song seq]
+;  ((if find-by-name seq song)
+;    ()
+;    (calculate-euclidean-distance-csv )
+;   ))
