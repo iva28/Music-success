@@ -17,7 +17,9 @@
                            (update acc :ones inc)))
                        {:zeros 0 :ones 0}
                        seq)]
-    (> (:ones counts) (:zeros counts))))
+    (if (> (:ones counts) (:zeros counts))
+      1
+      0)))
 
 (def el1 [[1 0] [2 0] ["i" 1] [1] [9 9 1]])
 (is-success el1)
