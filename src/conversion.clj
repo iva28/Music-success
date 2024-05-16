@@ -1,4 +1,4 @@
-(ns parameters
+(ns conversion
   (:require [distance_functions]
             [csv_load :refer [read-csv]]))
 
@@ -33,4 +33,9 @@
 
 (print (convert-to-float-in-list first-song))
 
+; Converting list of list
+(defn convert-to-float-list-of-lists
+  [list-list]
+  (mapv #(convert-to-float-in-list %) list-list))
 
+(print (convert-to-float-list-of-lists stones-songs))

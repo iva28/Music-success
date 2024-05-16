@@ -1,8 +1,7 @@
-(ns csv_load)
-
-(require '[clojure-csv.core :as csv]
-          '[clojure.java.io :as io]
-          '[clojure.string :as str])
+(ns csv_load
+  (:require [clojure-csv.core :as csv]
+            [clojure.java.io :as io]
+            [clojure.string :as str]))
 
 (defn read-csv
   [file_path]
