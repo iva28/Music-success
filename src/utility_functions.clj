@@ -35,5 +35,12 @@
 (defn sort-by-distance
   [seq]
   (sort-by last seq))
-
 (sort-by-distance songs-trial)
+
+(defn create-song-awards-map
+  [seq]
+  (reduce (fn [acc el]
+            (assoc acc (first el) (last el)))
+          {}
+          seq))
+
