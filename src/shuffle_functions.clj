@@ -1,3 +1,4 @@
+(ns shuffle_functions)
 (def first-list [1 2 3])
 (def second-list [])
 
