@@ -10,11 +10,8 @@
     (-> file (slurp) (csv/parse-csv))))
 
 (def stones-csv (read-csv "src/dataset/stones_analysis.csv"))
-
 (take 1 stones-csv)
-
 (print (count stones-csv))
-
 
 ;Column names
 (def csv-column-names (vec (first stones-csv)))
@@ -38,7 +35,6 @@
                           (conj (second stones-csv) 1)
                           (conj (second stones-csv) 0)))
 (print updated-first-song)
-
 
 (defn check-for-award
   [seq]
