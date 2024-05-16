@@ -1,10 +1,13 @@
-(def first_list [1 2 3])
+(def first-list [1 2 3])
 
-(def second_list [])
+(def second-list [])
 
 (defn add-random-element-from-list
   [first-list second-list]
-  (let [random-index (rand-int (count second-list))
-        random-list (nth second-list random-index)]
-    (conj first-list random-list)))
+  (let [list-size (count first-list)
+        random-index (shuffle (range list-size))
+        random-lists (map #(nth first-list %) random-index)]
+    (apply conj second-list random-lists)))
 
+(def updated-second (add-random-element-from-list first-list second-list))
+(print updated-second)
