@@ -12,10 +12,14 @@
 (print updated-second)
 
 ;Trial with onther values than numbers
-
 (def first-list-words [1 "Iva" 3 7 "Sasa"])
 (def second-list-words [])
 
 (def updated-second-words
   (add-random-element-from-list first-list-words second-list-words))
 (print updated-second-words)
+
+;Trial with list of lists
+(def first-list-list [[1 2 3] [3 4]])
+(def second-list-list (add-random-element-from-list first-list-words []))
+(print second-list-list)
