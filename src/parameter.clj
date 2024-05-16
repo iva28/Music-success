@@ -11,22 +11,6 @@
 (def stones-csv (read-csv "src/dataset/modified_stones.csv"))
 (def stones-songs (convert-to-float-list-of-lists (rest stones-csv)))
 
-(def first-song (first updated-stones-songs))
-
-(calculate-euclidean-distance-csv first-song (all-songs-but-one stones-songs (first first-song)))
-
-(def exluding-first (all-songs-but-one stones-songs (first first-song)))
-(print (count stones-songs))
-(print (count exluding-first))
-
-
-(def distances-to-first-song (calculate-distance-for-chosen-song first-song exluding-first))
-(def sorted-distances-to-first-song (sort-by-distance distances-to-first-song))
-
-(def testing-songs (take 10 stones-songs))
-(def testing-songs (create-song-awards-map testing-songs))
-(print testing-songs)
-(keys testing-songs)
 
 ;K=3
 ;one song
@@ -42,5 +26,20 @@
 (print real-value)
 (print predicted-value)
 
+;Testing with 10 songs k = 3
+(def testing-songs (take 10 stones-songs))
+(def testing-songs (create-song-awards-map testing-songs))
+(def song-keys (keys testing-songs))
+(get testing-songs (first song-keys))
 
+(def right-predictions-3 (atom 0))
+(doseq [key song-keys]
+  (let [distances-to-ith-song (calculate-distance-for-chosen-song key (all-songs-but-one stones-songs key))
+        distances-to-ith-song (sort-by-distance distances-to-ith-song)
+        top-3-closest (take 3 distances-to-ith-song)
+        predicted-value (is-success top-3-closest)]
+    (if (= predicted-value (get testing-songs key))
+      (swap! right-predictions-3 inc))))
+
+(print @right-predictions-3)
 
