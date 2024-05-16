@@ -41,4 +41,4 @@
   [list-list]
   (mapv #(convert-to-float-in-list %) list-list))
 
-(print (convert-to-float-list-of-lists stones-songs))
+;(print (convert-to-float-list-of-lists stones-songs))

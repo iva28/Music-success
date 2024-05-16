@@ -1,19 +1,26 @@
 (ns parameter
   (:require [csv_load :refer [read-csv]]
-            [conversion :refer [convert-to-float-in-list
-                                convert-to-float-list-of-lists]]
+            [conversion :refer [convert-to-float-list-of-lists]]
             [distance_functions :refer [calculate-euclidean-distance-csv]]
-            [utility_functions :refer [find-by-name]]))
+            [utility_functions :refer [all-songs-but-one sort-by-distance]]))
 
 (def stones-csv (read-csv "src/dataset/modified_stones.csv"))
-(def stones-songs (rest stones-csv))
-(def updated-stones-songs (convert-to-float-list-of-lists stones-songs))
+(def stones-songs (convert-to-float-list-of-lists (rest stones-csv)))
 
 (def first-song (first updated-stones-songs))
 
-;(defn calculate-3-closest
-;  [song seq]
-;  ((if find-by-name seq song)
-;    ()
-;    (calculate-euclidean-distance-csv )
-;   ))
+(calculate-euclidean-distance-csv first-song (all-songs-but-one stones-songs (first first-song)))
+
+(def exluding-first (all-songs-but-one stones-songs (first first-song)))
+(print (count stones-songs))
+(print (count exluding-first))
+
+k=3 trial
+(defn calculate-distance-for-chosen-song
+  [song seq]
+  (map #(conj % (calculate-euclidean-distance-csv song %)) seq))
+
+(def distances-to-first-song (calculate-distance-for-chosen-song first-song exluding-first))
+(def sorted-distances-to-first-song (sort-by-distance distances-to-first-song))
+(print sorted-distances-to-first-song)
+

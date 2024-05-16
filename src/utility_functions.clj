@@ -1,4 +1,5 @@
-(ns utility_functions)
+(ns utility_functions
+  (:require [conversion :refer [convert-to-float-in-list]]))
 
 (def example-list ["Example" 1 2 3])
 
@@ -24,8 +25,15 @@
 
 (defn all-songs-but-one
   [seq song]
-  (remove #(find-by-name % song) seq))
+  ;(remove #(find-by-name % song) seq)
+  (convert-to-float-in-list(remove #(find-by-name % song) seq)))
 
-(def songs-trial [["S1" 2 3 ] ["S3" 1] ["S4" "k"]])
+(def songs-trial [["S1" 2 3 ] ["S3" 1] ["S4" 2]])
 (def exclude-trial (all-songs-but-one songs-trial "S1"))
 (print exclude-trial)
+
+(defn sort-by-distance
+  [seq]
+  (sort-by last seq))
+
+(sort-by-distance songs-trial)
