@@ -1,7 +1,8 @@
 (ns csv_load
   (:require [clojure-csv.core :as csv]
             [clojure.java.io :as io]
-            [clojure.string :as str]))
+            [clojure.string :as str]
+            [utility_functions :as ut]))
 
 (defn read-csv
   [file_path]
@@ -86,3 +87,35 @@
       (.write writer "\n"))))
 
 (save-modified-songs-csv modified-songs modified-column-names "src/dataset/modified_stones.csv")
+
+;Load just song names
+(defn read-songs-only [file]
+  (with-open [reader (io/reader file)]
+    (mapv
+      (fn [line]
+        (let [parts (str/split line #",")]
+          (first parts)))
+      (line-seq reader))))
+(def songs-only (read-songs-only "src/dataset/shuffled_songs.csv"))
+(ut/print-sequence songs-only)
+
+(defn add-index-to-songs [songs]
+  (map-indexed
+    (fn [index song-name]
+      [index song-name])
+    songs))
+
+(def modified-songs (list (add-index-to-songs songs-only)))
+(ut/print-sequence modified-songs)
+
+(defn modified-songs-and-index
+  [file]
+  (list (add-index-to-songs (with-open [reader (io/reader file)]
+    (mapv
+      (fn [line]
+        (let [parts (str/split line #",")]
+          (first parts)))
+      (line-seq reader))))))
+
+(def result-songs-indexes (modified-songs-and-index "src/dataset/shuffled_songs.csv"))
+(ut/print-sequence result-songs-indexes)
