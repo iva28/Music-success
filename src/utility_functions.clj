@@ -106,3 +106,7 @@
   [song]
   (println "Title:" (first song) "Album name:" (second song)
            "Songwriter:" (nth song 3) "Lead vocalist:" (nth song 4)))
+
+(defn find-same-songs-on-album
+  [seq album]
+  (filter #(= (second %) album) seq))
