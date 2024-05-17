@@ -44,8 +44,7 @@
     (if (= predicted-value 1)
       "Song will be hit!"
       "Song won't be hit :(")
-    )
-  (println song))
+    ))
 
 (defn top-3-closest-songs-by-row
   [seq row]
@@ -62,9 +61,9 @@
 (def first-song (first stones-songs))
 (def first-song (first first-song))
 
-(print (predict-songs-success-by-name stones-songs "2120 South Michigan Avenue"))
-(print (predict-songs-success-by-row stones-songs 1))
+;(print (predict-songs-success-by-name stones-songs "2120 South Michigan Avenue"))
+;(print (predict-songs-success-by-row stones-songs 1))
 
-(top-3-closest-songs-by-name stones-songs first-song)
-(top-3-closest-songs-by-row stones-songs 1)
+;(top-3-closest-songs-by-name stones-songs first-song)
+;(top-3-closest-songs-by-row stones-songs 1)
 

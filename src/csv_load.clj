@@ -48,14 +48,14 @@
 
 (def updated-songs-only (add-award-flag-for-all songs-only))
 ;(print (count updated-songs-only))
-(take 1 updated-songs-only)
+;(take 1 updated-songs-only)
 ;(print first-award-column)
 ;(print (count csv-column-names))
 ;(print (count (first updated-songs-only)))
 
-(subvec (first updated-songs-only) 0 first-award-column)
-(concat (subvec (first updated-songs-only) 0 first-award-column) (last (first updated-songs-only)))
-(concat (subvec (second updated-songs-only) 0 first-award-column) (last (second updated-songs-only)))
+;(subvec (first updated-songs-only) 0 first-award-column)
+;(concat (subvec (first updated-songs-only) 0 first-award-column) (last (first updated-songs-only)))
+;(concat (subvec (second updated-songs-only) 0 first-award-column) (last (second updated-songs-only)))
 
 (defn songs-only-no-awards-columns
   [songs first-award-column]
@@ -73,7 +73,7 @@
   [songs first-award-column]
   (map #(concat (subvec %  0 first-award-column) [(last %)]) songs))
 
-(subvec csv-column-names 0 first-award-column)
+;(subvec csv-column-names 0 first-award-column)
 (def modified-column-names (conj (subvec csv-column-names 0 first-award-column) "Won award"))
 ;(print modified-column-names)
 

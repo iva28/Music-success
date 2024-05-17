@@ -7,7 +7,7 @@
   [seq name]
   (= name (first seq)))
 
-(find-by-name example-list (first example-list))
+;(find-by-name example-list (first example-list))
 
 ;(defn is-success
 ;  [seq]
@@ -35,7 +35,7 @@
       0)))
 
 (def el1 [[1 0 5] [2 0 5] ["i" 1 ""] [1 8] [9 9 1 5]])
-(is-success el1)
+;(is-success el1)
 
 
 (defn all-songs-but-one
@@ -50,7 +50,7 @@
 (defn sort-by-distance
   [seq]
   (sort-by last seq))
-(sort-by-distance songs-trial)
+;(sort-by-distance songs-trial)
 
 (defn create-song-awards-map
   [seq]
@@ -70,12 +70,13 @@
    (doseq [song seq]
      (if (= 1 (last song))
        (swap! count-hits inc)))
-   (println "Print number of hit songs in this dataset: " @count-hits)
-   (println "Print number of songs that weren't hits in this dataset: "
+   ;(println "Print number of hit songs in this dataset: " @count-hits)
+   ;(println "Print number of songs that weren't hits in this dataset: "
             (- (count seq) @count-hits))
-   (println "Hits make " (* (float (/ @count-hits (count seq))) 100))
-   (println "Nonhits make " (* (float (/ (- (count seq) @count-hits) (count seq) )) 100))
-   ))
+   ;(println "Hits make " (* (float (/ @count-hits (count seq))) 100))
+   ;(println "Nonhits make " (* (float (/ (- (count seq) @count-hits) (count seq) )) 100))
+   )
+;)
 
 (defn format-song-row-number [songs]
   (map

@@ -43,25 +43,26 @@
         ;(println "Predicted value:" predicted-value)
         (when (= real-value predicted-value)
           (swap! correct-predictions-counter inc)))
-      (println @correct-predictions-counter))
-   (* (float (/ @correct-predictions-counter (count songs))) 100)))
+      ;(println @correct-predictions-counter))
+   (* (float (/ @correct-predictions-counter (count songs))) 100))))
 
 ;second trial
-(println (calculate-correct-predictions first-test-list 3))
-(println (calculate-correct-predictions first-test-list 5))
-(println (calculate-correct-predictions first-test-list 7))
+;(println (calculate-correct-predictions first-test-list 3))
+;(println (calculate-correct-predictions first-test-list 5))
+;(println (calculate-correct-predictions first-test-list 7))
 
-(def average-k-3 (atom 0))
-(doseq [test-list testing-lists]
-  (swap! average-k-3 + (calculate-correct-predictions test-list 3)))
-(swap! average-k-3 / (count testing-lists))
-(println "Accuracy when k = 3: " @average-k-3)
-
-;K = 5
-(def average-k-5 (atom 0))
-(doseq [test-list testing-lists]
-  (swap! average-k-5 + (calculate-correct-predictions test-list 5)))
-(swap! average-k-5 / (count testing-lists))
-(println "Accuracy when k = 5: " @average-k-5)
+;
+;(def average-k-3 (atom 0))
+;(doseq [test-list testing-lists]
+;  (swap! average-k-3 + (calculate-correct-predictions test-list 3)))
+;(swap! average-k-3 / (count testing-lists))
+;;(println "Accuracy when k = 3: " @average-k-3)
+;
+;;K = 5
+;(def average-k-5 (atom 0))
+;(doseq [test-list testing-lists]
+;  (swap! average-k-5 + (calculate-correct-predictions test-list 5)))
+;(swap! average-k-5 / (count testing-lists))
+;(println "Accuracy when k = 5: " @average-k-5)
 
 ;No increment in accuracy score between k = 3 and k = 5 so k = 3 will be chosen
