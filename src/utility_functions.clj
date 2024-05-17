@@ -89,5 +89,20 @@
 
 (defn search-by-row-number
   [seq row]
-  (nth seq (dec row)))
+  (try
+    (let [index (dec (Integer/parseInt row))]
+      (if (and (>= index 0) (< index (count seq)))
+        (nth seq index)
+        (throw (Exception. "Index out of range"))))
+    (catch Exception e
+      (println "Error"))))
 
+(defn find-album-of-song-by-row
+  [seq row]
+  (let [song (search-by-row-number seq row)]
+    (nth song 2)))
+
+(defn format-print-song
+  [song]
+  (println "Title:" (first song) "Album name:" (second song)
+           "Songwriter:" (nth song 3) "Lead vocalist:" (nth song 4)))
