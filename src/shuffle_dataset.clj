@@ -7,7 +7,7 @@
 
 ;Shuffling origininal csv
 (def column-names (first stones-csv))
-(print column-names)
+;(print column-names)
 (def stones-songs (rest stones-csv))
 
 (def  shuffled-stones (add-random-element-from-list-of-list stones-songs))

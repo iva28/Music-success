@@ -7,7 +7,7 @@
 
 (def first-song (first stones-songs))
 
-(println-str first-song)
+;(println-str first-song)
 
 (defn convert-to-float
   [x]
@@ -16,9 +16,9 @@
     (string? x) (try (Float/parseFloat x) (catch Exception e nil))
      :else x))
 
-(print (convert-to-float 2))
-(print (convert-to-float "2"))
-(print (convert-to-float "I2"))
+;(print (convert-to-float 2))
+;(print (convert-to-float "2"))
+;(print (convert-to-float "I2"))
 
 (defn convert-to-float-in-list
   [seq]
@@ -31,10 +31,12 @@
              (catch Exception _ %2)))
         (range) seq))
 
+
+
 (def updated (convert-to-float-in-list first-song))
-(print updated)
-(doseq [el updated]
-  (println (type el)))
+;(print updated)
+;(doseq [el updated]
+;  (println (type el)))
 
 ; Converting list of list
 (defn convert-to-float-list-of-lists

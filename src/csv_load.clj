@@ -1,8 +1,8 @@
 (ns csv_load
   (:require [clojure-csv.core :as csv]
             [clojure.java.io :as io]
-            [clojure.string :as str]
-            [utility_functions :as ut]))
+            [clojure.string :as str]))
+
 
 (defn read-csv
   [file_path]
@@ -11,12 +11,12 @@
 
 (def stones-csv (read-csv "src/dataset/stones_analysis.csv"))
 (take 1 stones-csv)
-(print (count stones-csv))
+;(print (count stones-csv))
 
 ;Column names
 (def csv-column-names (vec (first stones-csv)))
 (def songs-only (rest stones-csv))
-(print csv-column-names)
+;(print csv-column-names)
 (count csv-column-names)
 
 (defn index-of-element-by-name
@@ -24,7 +24,7 @@
    (.indexOf seq name))
 
 (def first-award-column (index-of-element-by-name csv-column-names "British charts"))
-(print first-award-column)
+;(print first-award-column)
 
 ;columns for awards
 (subvec (second stones-csv) first-award-column (count csv-column-names))
@@ -34,7 +34,7 @@
 (def updated-first-song (if (some #(not= % "No") (subvec (second stones-csv) first-award-column (count csv-column-names)))
                           (conj (second stones-csv) 1)
                           (conj (second stones-csv) 0)))
-(print updated-first-song)
+;(print updated-first-song)
 
 (defn check-for-award
   [seq]
@@ -47,11 +47,11 @@
           (conj % "0")) songs))
 
 (def updated-songs-only (add-award-flag-for-all songs-only))
-(print (count updated-songs-only))
+;(print (count updated-songs-only))
 (take 1 updated-songs-only)
-(print first-award-column)
-(print (count csv-column-names))
-(print (count (first updated-songs-only)))
+;(print first-award-column)
+;(print (count csv-column-names))
+;(print (count (first updated-songs-only)))
 
 (subvec (first updated-songs-only) 0 first-award-column)
 (concat (subvec (first updated-songs-only) 0 first-award-column) (last (first updated-songs-only)))
@@ -62,12 +62,12 @@
   (map #(concat (subvec % 0 first-award-column) [(last %)]) songs))
 
 (def modified-songs (songs-only-no-awards-columns updated-songs-only first-award-column))
-(print (count modified-songs))
-(print (count (first modified-songs)))
-(println (first modified-songs))
+;(print (count modified-songs))
+;(print (count (first modified-songs)))
+;(println (first modified-songs))
 
-(print (count csv-column-names))
-(print first-award-column)
+;(print (count csv-column-names))
+;(print first-award-column)
 
 (defn modify-column-names
   [songs first-award-column]
@@ -75,7 +75,7 @@
 
 (subvec csv-column-names 0 first-award-column)
 (def modified-column-names (conj (subvec csv-column-names 0 first-award-column) "Won award"))
-(print modified-column-names)
+;(print modified-column-names)
 
 ;SAVING NEW CSV
 (defn save-modified-songs-csv [songs column-names filename]
@@ -97,7 +97,6 @@
           (first parts)))
       (line-seq reader))))
 (def songs-only (read-songs-only "src/dataset/shuffled_songs.csv"))
-(ut/print-sequence songs-only)
 
 (defn add-index-to-songs [songs]
   (map-indexed
@@ -106,7 +105,6 @@
     songs))
 
 (def modified-songs (list (add-index-to-songs songs-only)))
-(ut/print-sequence modified-songs)
 
 (defn modified-songs-and-index
   [file]
@@ -118,9 +116,5 @@
       (line-seq reader))))))
 
 (def result-songs-indexes (modified-songs-and-index "src/dataset/shuffled_songs.csv"))
-(ut/print-sequence result-songs-indexes)
-
-(def first-index (nth (nth (first result-songs-indexes) 0) 0))
 
 
-(print (nth (rest stones-csv) first-index))

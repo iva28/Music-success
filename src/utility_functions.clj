@@ -45,7 +45,7 @@
 
 (def songs-trial [["S1" 2 3 ] ["S3" 1] ["S4" 2]])
 (def exclude-trial (all-songs-but-one songs-trial "S1"))
-(print exclude-trial)
+;(print exclude-trial)
 
 (defn sort-by-distance
   [seq]
