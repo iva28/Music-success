@@ -1,4 +1,4 @@
-(ns parameter
+(ns parameter_experiments
   (:require [csv_load :refer [read-csv]]
             [conversion :refer [convert-to-float-list-of-lists]]
             [distance_functions :refer [calculate-euclidean-distance-csv]]
@@ -30,7 +30,7 @@
 (defn calculate-correct-predictions
   [songs k]
   (let [correct-predictions-counter (atom 0)]
-    (println "K" k)
+    ;(println "K" k)
     (doseq [song songs]
       (let [song-name (first song)
             distances-to-song (calculate-distance-for-chosen-song (all-songs-but-one stones-songs song-name) song-name)
@@ -38,8 +38,8 @@
             top-3-closest (take k sorted-distances)
             real-value (last song)
             predicted-value (is-success top-3-closest)]
-        (println "Real value:" real-value)
-        (println "Predicted value:" predicted-value)
+        ;(println "Real value:" real-value)
+        ;(println "Predicted value:" predicted-value)
         (when (= real-value predicted-value)
           (swap! correct-predictions-counter inc)))
       (println @correct-predictions-counter))

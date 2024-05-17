@@ -7,10 +7,10 @@
 ;  (doseq [ns (find-namespaces-in-dir (io/file "src"))]
 ;    (println ns)))
 ;;
-(defn -main
-  "I don't do a whole lot ... yet."
-  [& args]
-  (menu/main-menu))
-;
-;
-(-main)
+;(defn -main
+;  "I don't do a whole lot ... yet."
+;  [& args]
+;  (menu/main-menu))
+;;
+;;
+;(-main)
