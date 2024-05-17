@@ -63,4 +63,4 @@
 (swap! average-k-5 / (count testing-lists))
 (println "Accuracy when k = 5: " @average-k-5)
 
-;No changes between k = 3 and k = 5 so k = 3 will be chosen
+;No increment in accuracy score between k = 3 and k = 5 so k = 3 will be chosen
