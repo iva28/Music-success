@@ -6,7 +6,8 @@
                                        sort-by-distance
                                        is-success
                                        print-sequence
-                                       count-hits-and-not-hits]]))
+                                       count-hits-and-not-hits
+                                       search-by-name-return-song]]))
 
 (defn calculate-distance-for-chosen-song
   [seq song]

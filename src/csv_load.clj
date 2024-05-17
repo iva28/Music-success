@@ -108,12 +108,12 @@
 
 (defn modified-songs-and-index
   [file]
-  (vec (add-index-to-songs (with-open [reader (io/reader file)]
+  (rest (vec (add-index-to-songs (with-open [reader (io/reader file)]
     (mapv
       (fn [line]
         (let [parts (str/split line #",")]
           (first parts)))
-      (line-seq reader))))))
+      (line-seq reader)))))))
 
 (def result-songs-indexes (modified-songs-and-index "src/dataset/shuffled_songs.csv"))
 

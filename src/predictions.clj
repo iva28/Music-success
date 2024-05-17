@@ -1,12 +1,13 @@
 (ns predictions
   (:require  [parameter_experiments :refer [calculate-distance-for-chosen-song]]))
 
-(def stones-csv (csv_load/read-csv "src/dataset/modified_stones.csv"))
+(def stones-csv (csv_load/read-csv "src/dataset/shuffled_songs.csv"))
 (def stones-songs (conversion/convert-to-float-list-of-lists (rest stones-csv)))
 
-(defn predict-songs-success
-  [seq song]
-  (let [all-except-one (utility_functions/all-songs-but-one seq (first song))
+(defn predict-songs-success-by-name
+  [seq song-name]
+  (let [song (utility_functions/search-by-name-return-song seq song-name)
+        all-except-one (utility_functions/all-songs-but-one seq song-name)
         distances-to-song (calculate-distance-for-chosen-song all-except-one song)
         sorted-distances (utility_functions/sort-by-distance distances-to-song)
         top-3-closest (take 3 sorted-distances)
@@ -17,9 +18,10 @@
       "Song won't be hit :(")
     ))
 
-(defn top-3-closest-songs
-  [seq song]
-  (let [all-except-one (utility_functions/all-songs-but-one seq (first song))
+(defn top-3-closest-songs-by-name
+  [seq song-name]
+  (let [song (utility_functions/search-by-name-return-song seq song-name)
+        all-except-one (utility_functions/all-songs-but-one seq song-name)
         distances-to-song (calculate-distance-for-chosen-song all-except-one song)
         sorted-distances (utility_functions/sort-by-distance distances-to-song)
         top-3-closest (take 3 sorted-distances)
@@ -29,7 +31,7 @@
     ))
 
 (def first-song (first stones-songs))
-(print (first first-song))
+(def first-song (first first-song))
 
-(print (predict-songs-success stones-songs first-song))
-(top-3-closest-songs stones-songs first-song)
+(print (predict-songs-success-by-name stones-songs "2120 South Michigan Avenue"))
+(top-3-closest-songs-by-name stones-songs first-song)

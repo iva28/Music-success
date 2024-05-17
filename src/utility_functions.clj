@@ -82,3 +82,12 @@
     (fn [[index song]]
       (str index ". " song))
     songs))
+
+(defn search-by-name-return-song
+  [seq song-name]
+  (filter #(= song-name (first %)) seq))
+
+(defn search-by-row-number
+  [seq row]
+  (nth seq (dec row)))
+
