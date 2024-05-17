@@ -2,7 +2,12 @@
   (:require [csv_load :refer [read-csv]]
             [conversion :refer [convert-to-float-list-of-lists]]
             [distance_functions :refer [calculate-euclidean-distance-csv]]
-            [utility_functions :refer [all-songs-but-one sort-by-distance create-song-awards-map is-success]]))
+            [utility_functions :refer [all-songs-but-one
+                                       sort-by-distance
+                                       create-song-awards-map
+                                       is-success
+                                       find-by-name
+                                       print-sequence]]))
 
 (defn calculate-distance-for-chosen-song
   [seq song]
@@ -12,81 +17,13 @@
 (def stones-songs (convert-to-float-list-of-lists (rest stones-csv)))
 
 
-;K=3
-;one song
-(def first-song (first stones-songs))
-(print first-song)
-(def distances-to-first-song (calculate-distance-for-chosen-song first-song (all-songs-but-one stones-songs first-song)))
-(def distances-to-first-song (sort-by-distance distances-to-first-song))
-(def top-3-closest (take 3 distances-to-first-song))
-
-(def real-value (last first-song))
-(def predicted-value (is-success top-3-closest))
-
-(print real-value)
-(print predicted-value)
-
-;Testing with 10 songs k = 3
-(def testing-songs (take 10 stones-songs))
-(def testing-songs (create-song-awards-map testing-songs))
-(def song-keys (keys testing-songs))
-(get testing-songs (first song-keys))
-
-(def right-predictions-3 (atom 0))
-(doseq [key song-keys]
-  (let [distances-to-ith-song (calculate-distance-for-chosen-song key (all-songs-but-one stones-songs key))
-        distances-to-ith-song (sort-by-distance distances-to-ith-song)
-        top-3-closest (take 3 distances-to-ith-song)
-        predicted-value (is-success top-3-closest)]
-    (if (= predicted-value (get testing-songs key))
-      (swap! right-predictions-3 inc))))
-
-(print @right-predictions-3)
-
-
-;TAKE 222
-(def ten-songs (take 10 stones-songs))
-
-(doseq [song ten-songs]
-  )
-(def first-song (first stones-songs))
-(print first-song)
-(def distances-to-first-song (calculate-distance-for-chosen-song first-song (all-songs-but-one stones-songs first-song)))
-(def distances-to-first-song (sort-by-distance distances-to-first-song))
-(def top-3-closest (take 3 distances-to-first-song))
-
-(def real-value (last first-song))
-(def predicted-value (is-success top-3-closest))
-
-(print (first (first ten-songs)))
-
-(doseq [song ten-songs]
-  (println (first song)))
-(doseq [song ten-songs]
-  (let [song-name (first song)
-        distances-to-song (calculate-distance-for-chosen-song (all-songs-but-one stones-songs song-name) song-name)
-        sorted-distances (sort-by-distance distances-to-song)
-        top-3-closest (take 3 sorted-distances)
-        real-value (last song)
-        predicted-value (is-success top-3-closest)]
-    (println "Real value:" real-value)
-    (println "Predicted value:" predicted-value)))
-
-(defn calculate-correct-predictions
-  [songs k]
-  (doseq [song songs]
-    (let [song-name (first song)
-          distances-to-song (calculate-distance-for-chosen-song (all-songs-but-one stones-songs song-name) song-name)
-          sorted-distances (sort-by-distance distances-to-song)
-          top-3-closest (take k sorted-distances)
-          real-value (last song)
-          predicted-value (is-success top-3-closest)]
-      (println "Real value:" real-value)
-      (println "Predicted value:" predicted-value))) )
-
-
-(calculate-correct-predictions ten-songs 3)
-
+;K = 3
+(def first-test-list (subvec stones-songs 0 30))
+(def second-test-list (subvec stones-songs 40 70))
+(def third-test-list (subvec stones-songs 82 112))
+(def forth-test-list (subvec stones-songs 150 180))
+(def fifth-test-list (subvec stones-songs 230 260))
+(def testing-lists [first-test-list second-test-list third-test-list forth-test-list fifth-test-list])
 
 (defn calculate-correct-predictions
   [songs k]
@@ -98,11 +35,114 @@
             top-3-closest (take k sorted-distances)
             real-value (last song)
             predicted-value (is-success top-3-closest)]
-        (println "Real value:" real-value)
-        (println "Predicted value:" predicted-value)
+        ;(println "Real value:" real-value)
+        ;(println "Predicted value:" predicted-value)
         (when (= real-value predicted-value)
           (swap! correct-predictions-counter inc))))
-    @correct-predictions-counter))
+   (* (float (/ @correct-predictions-counter (count songs))) 100)))
 
-(calculate-correct-predictions ten-songs 3)
+;second trial
+(println (calculate-correct-predictions first-test-list 3))
+(println (calculate-correct-predictions first-test-list 5))
+(println (calculate-correct-predictions first-test-list 7))
 
+(def average-k-3 (atom 0))
+(doseq [test-list testing-lists]
+  (swap! average-k-3 + (calculate-correct-predictions test-list 3)))
+(swap! average-k-3 / (count testing-lists))
+(println "Accuracy when k = 3: " @average-k-3)
+
+;K = 5
+(def average-k-5 (atom 0))
+(doseq [test-list testing-lists]
+  (swap! average-k-5 + (calculate-correct-predictions test-list 5)))
+(swap! average-k-5 / (count testing-lists))
+(println "Accuracy when k = 5: " @average-k-5)
+
+;K = 7
+(def average-k-7 (atom 0))
+(doseq [test-list testing-lists]
+  (swap! average-k-7 + (calculate-correct-predictions test-list 7)))
+(swap! average-k-7 / (count testing-lists))
+(println "Accuracy when k = 7: " @average-k-7)
+
+;K = 9
+(def average-k-9 (atom 0))
+(doseq [test-list testing-lists]
+  (swap! average-k-9 + (calculate-correct-predictions test-list 9)))
+(swap! average-k-9 / (count testing-lists))
+(println "Accuracy when k = 7: " @average-k-9)
+
+;
+;k = 5
+(def f5 (calculate-correct-predictions first-test-list 5))
+(def s5 (calculate-correct-predictions second-test-list 5))
+(def t5 (calculate-correct-predictions third-test-list 5))
+(def forth5 (calculate-correct-predictions forth-test-list 5))
+(def fiv5 (calculate-correct-predictions fifth-test-list 5))
+
+(print (float (/ (reduce + [f5 s5 t5 forth5 fiv5]) 5)))
+
+
+(def f5 (calculate-correct-predictions first-test-list 7))
+(def s5 (calculate-correct-predictions second-test-list 7))
+(def t5 (calculate-correct-predictions third-test-list 7))
+(def forth5 (calculate-correct-predictions forth-test-list 7))
+(def fiv5 (calculate-correct-predictions fifth-test-list 7))
+
+(print (float (/ (reduce + [f5 s5 t5 forth5 fiv5]) 5)))
+
+(def f5 (calculate-correct-predictions first-test-list 9))
+(def s5 (calculate-correct-predictions second-test-list 9))
+(def t5 (calculate-correct-predictions third-test-list 9))
+(def forth5 (calculate-correct-predictions forth-test-list 9))
+(def fiv5 (calculate-correct-predictions fifth-test-list 9))
+
+(print (float (/ (reduce + [f5 s5 t5 forth5 fiv5]) 3)))
+
+(def f5 (calculate-correct-predictions first-test-list 3))
+(def s5 (calculate-correct-predictions second-test-list 3))
+(def t5 (calculate-correct-predictions third-test-list 3))
+(def forth5 (calculate-correct-predictions forth-test-list 3))
+(def fiv5 (calculate-correct-predictions fifth-test-list 3))
+
+(print (float (/ (reduce + [f5 s5 t5 forth5 fiv5]) 5)))
+;
+
+(defn calculate-average-accuracy
+  [test-lists k]
+  (let [total (reduce + (for [test-list test-lists]
+                          (calculate-correct-predictions test-list k)))]
+    (float (/ total (count test-lists)))))
+
+(println (calculate-average-accuracy testing-lists 5))
+
+;Finding bug
+(def first-song (first stones-songs))
+(print first-song)
+(print (first first-song))
+;Testing all songs but one - works fine
+(def excluding-first (all-songs-but-one stones-songs (first first-song)))
+
+;Testing calculating distance - OK
+(def distances-first (calculate-distance-for-chosen-song excluding-first first-song))
+(print-sequence distances-first)
+
+;Testing sorting - OK
+
+(def sorted-distances-first (sort-by-distance distances-first))
+(print-sequence sorted-distances-first)
+
+;Testing taking 3 closest
+(def three-closest (take 3 sorted-distances-first))
+(print-sequence three-closest)
+
+(def predicted-value (is-success three-closest))
+(print predicted-value)
+(def real-value (last first-song))
+(print real-value)
+
+;Inaccurate for k = 3
+; K = 5
+(def five-closest (take 5 sorted-distances-first))
+(print-sequence five-closest)
