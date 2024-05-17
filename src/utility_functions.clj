@@ -64,3 +64,15 @@
   (doseq [el seq]
     (println el)))
 
+(defn count-hits-and-not-hits
+  [seq]
+ (let [count-hits (atom 0)]
+   (doseq [song seq]
+     (if (= 1 (last song))
+       (swap! count-hits inc)))
+   (println "Print number of hit songs in this dataset: " @count-hits)
+   (println "Print number of songs that weren't hits in this dataset: "
+            (- (count seq) @count-hits))
+   (println "Hits make " (* (float (/ @count-hits (count seq))) 100))
+   (println "Nonhits make " (* (float (/ (- (count seq) @count-hits) (count seq) )) 100))
+   ))
