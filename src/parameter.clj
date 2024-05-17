@@ -83,6 +83,7 @@
 
 (print (float (/ (reduce + [f5 s5 t5 forth5 fiv5]) 5)))
 
+;k = 7
 
 (def f5 (calculate-correct-predictions first-test-list 7))
 (def s5 (calculate-correct-predictions second-test-list 7))
@@ -92,13 +93,14 @@
 
 (print (float (/ (reduce + [f5 s5 t5 forth5 fiv5]) 5)))
 
+;k = 9
 (def f5 (calculate-correct-predictions first-test-list 9))
 (def s5 (calculate-correct-predictions second-test-list 9))
 (def t5 (calculate-correct-predictions third-test-list 9))
 (def forth5 (calculate-correct-predictions forth-test-list 9))
 (def fiv5 (calculate-correct-predictions fifth-test-list 9))
 
-(print (float (/ (reduce + [f5 s5 t5 forth5 fiv5]) 3)))
+(print (float (/ (reduce + [f5 s5 t5 forth5 fiv5]) 5)))
 
 (def f5 (calculate-correct-predictions first-test-list 3))
 (def s5 (calculate-correct-predictions second-test-list 3))
@@ -115,7 +117,7 @@
                           (calculate-correct-predictions test-list k)))]
     (float (/ total (count test-lists)))))
 
-(println (calculate-average-accuracy testing-lists 5))
+(println (calculate-average-accuracy testing-lists 0))
 
 ;Finding bug
 (def first-song (first stones-songs))
@@ -134,7 +136,7 @@
 (print-sequence sorted-distances-first)
 
 ;Testing taking 3 closest
-(def three-closest (take 3 sorted-distances-first))
+(def three-closest (take 0 sorted-distances-first))
 (print-sequence three-closest)
 
 (def predicted-value (is-success three-closest))
@@ -146,3 +148,40 @@
 ; K = 5
 (def five-closest (take 5 sorted-distances-first))
 (print-sequence five-closest)
+(def predicted-value-5 (is-success five-closest))
+(print predicted-value-5)
+
+; k = 7
+(def seven-closest (take 7 sorted-distances-first))
+(print (is-success seven-closest))
+
+;k = 9
+(def nine-closest (take 9 sorted-distances-first))
+(print (is-success nine-closest))
+
+;SECOND SONG
+
+(def second-song (second stones-songs))
+(print second-song)
+(print (first second-song))
+(def excluding-first (all-songs-but-one stones-songs (first second-song)))
+(def distances-first (calculate-distance-for-chosen-song excluding-first second-song))
+(def sorted-distances-first (sort-by-distance distances-first))
+
+
+;K = 3
+(def three-closest (take 3 sorted-distances-first))
+(print-sequence three-closest)
+
+(def predicted-value (is-success three-closest))
+(print predicted-value)
+(def real-value (last first-song))
+(print real-value)
+
+;Testing calculating euclidian distance
+(print first-song)
+(print second-song)
+
+(def distance-first-second (calculate-euclidean-distance-csv first-song second-song))
+(print distance-first-second)
+
