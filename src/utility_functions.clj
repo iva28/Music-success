@@ -111,3 +111,8 @@
 (defn find-same-songs-on-album
   [seq album]
   (filter #(= (second %) album) seq))
+
+(defn print-just-song
+  [songs]
+  (doseq [song songs]
+    (println (first song))))

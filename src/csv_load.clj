@@ -11,12 +11,10 @@
 
 (def stones-csv (read-csv "src/dataset/stones_analysis.csv"))
 (take 1 stones-csv)
-;(print (count stones-csv))
 
 ;Column names
 (def csv-column-names (vec (first stones-csv)))
 (def songs-only (rest stones-csv))
-;(print csv-column-names)
 (count csv-column-names)
 
 (defn index-of-element-by-name
@@ -24,7 +22,6 @@
    (.indexOf seq name))
 
 (def first-award-column (index-of-element-by-name csv-column-names "British charts"))
-;(print first-award-column)
 
 ;columns for awards
 (subvec (second stones-csv) first-award-column (count csv-column-names))
@@ -34,7 +31,6 @@
 (def updated-first-song (if (some #(not= % "No") (subvec (second stones-csv) first-award-column (count csv-column-names)))
                           (conj (second stones-csv) 1)
                           (conj (second stones-csv) 0)))
-;(print updated-first-song)
 
 (defn check-for-award
   [seq]

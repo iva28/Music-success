@@ -4,10 +4,7 @@
 
 (def stones-csv (read-csv "src/dataset/shuffled_songs.csv"))
 (def stones-songs (rest stones-csv))
-
 (def first-song (first stones-songs))
-
-;(println-str first-song)
 
 (defn convert-to-float
   [x]
@@ -15,10 +12,6 @@
     (number? x) (float x)
     (string? x) (try (Float/parseFloat x) (catch Exception e nil))
      :else x))
-
-;(print (convert-to-float 2))
-;(print (convert-to-float "2"))
-;(print (convert-to-float "I2"))
 
 (defn convert-to-float-in-list
   [seq]

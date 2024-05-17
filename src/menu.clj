@@ -26,7 +26,8 @@
 
 (defn specific-song-details
   [song]
-  (utility_functions/format-print-song song)
+    (println "Current song:")
+    (utility_functions/format-print-song song)
     (println)
     (println "1.Find if the song is a hit")
     (println "2.Find 3 most similar songs")
@@ -38,13 +39,21 @@
   (let [chosen-option (read-line)]
   (cond
     (= chosen-option "1") (do
+                            (println)
                             (println (predict-songs-success-by-name stones-songs (first song)))
+                            (println)
                             (specific-song-details song))
     (= chosen-option "2") (do
+                            (println)
+                            (println "Top 3 closest songs to " (first song) ":")
                             (println (top-3-closest-songs-by-name stones-songs (first song)))
+                            (println)
                             (specific-song-details song))
     (= chosen-option "3") (do
-                            (println (utility_functions/find-same-songs-on-album stones-songs (second song)))
+                            (println)
+                            (println "Songs on the same album " (second song) ":")
+                            (ut/print-just-song (utility_functions/find-same-songs-on-album stones-songs (second song)))
+                            (println)
                             (specific-song-details song))
     (= chosen-option "4") (song-menu)
     (= chosen-option "5") (main-menu)
