@@ -76,3 +76,9 @@
    (println "Hits make " (* (float (/ @count-hits (count seq))) 100))
    (println "Nonhits make " (* (float (/ (- (count seq) @count-hits) (count seq) )) 100))
    ))
+
+(defn format-song-row-number [songs]
+  (map
+    (fn [[index song]]
+      (str index ". " song))
+    songs))

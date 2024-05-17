@@ -110,7 +110,7 @@
 
 (defn modified-songs-and-index
   [file]
-  (list (add-index-to-songs (with-open [reader (io/reader file)]
+  (vec (add-index-to-songs (with-open [reader (io/reader file)]
     (mapv
       (fn [line]
         (let [parts (str/split line #",")]
@@ -119,3 +119,8 @@
 
 (def result-songs-indexes (modified-songs-and-index "src/dataset/shuffled_songs.csv"))
 (ut/print-sequence result-songs-indexes)
+
+(def first-index (nth (nth (first result-songs-indexes) 0) 0))
+
+
+(print (nth (rest stones-csv) first-index))
