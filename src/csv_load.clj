@@ -41,7 +41,9 @@
 
 (defn check-for-award
   [seq]
-  (some #(not= % "No") (subvec seq first-award-column (count csv-column-names))))
+  (if (nil? seq)
+    nil
+    (some #(not= % "No") (subvec seq first-award-column (count csv-column-names)))))
 
 
 (defn add-award-flag-for-all

@@ -1,30 +1,30 @@
 Title,Album name,Song duration,Songwriter s ,Lead vocal s ,acousticness,danceability,energy,instrumentalness,liveness,loudness,speechiness,tempo,valence,Won award
-Little T&A,Tattoo You,203,Jagger/Richards,Richards,0.132,0.53,0.888,0.0321,0.425,-5.128,0.0282,136.123,0.833
-Little Queenie ,Get Yer Ya-Ya's Out!,273,Chuck Berry,Jagger,0.151,0.495,0.811,0.785,0.66,-6.879,0.0392,126.69,0.964
-Angie,Goats Head Soup,272,Jagger/Richards,Jagger,0.444,0.374,0.784,6.83E-05,0.131,-6.621,0.0832,134.467,0.347
-Gunface,Bridges to Babylon,302,Jagger/Richards,Jagger,0.000932,0.491,0.905,0.000253,0.0578,-4.511,0.0571,98.459,0.618
-I Am Waiting,Aftermath,190,Jagger/Richards,Jagger,0.564,0.63,0.384,5.49E-05,0.0993,-14.651,0.0394,88.586,0.614
-Anybody Seen My Baby?,Bridges to Babylon,271,Jagger/Richards/Lang/Mink,Jagger,0.00286,0.605,0.742,0.00105,0.256,-4.363,0.0327,105.04,0.47
-Out Of Tears,Voodoo Lounge,327,Jagger/Richards,Jagger,0.378,0.388,0.472,0.000934,0.135,-7.121,0.0285,144.354,0.137
-Flight 505,Aftermath,205,Jagger/Richards,Jagger,0.0567,0.564,0.671,0.0222,0.33,-11.141,0.0471,134.083,0.873
-Just My Imagination (Running Away With Me),Some Girls,278,Norman Whitfield/Barrett Strong,Jagger,0.521,0.452,0.911,0.379,0.322,-2.499,0.064,112.544,0.845
-I'm Moving On ,December's Children (And Everybody's),133,Hank Snow,Jagger,0.187,0.522415777,0.769,0.00691,0.2045,-6.493,0.0429,118.944,0.668
-Little Rain,Blue & Lonesome,212,Ewart G.Abner Jr./Jimmy Reed,Jagger,0.844,0.432,0.384,0.0471,0.102,-6.894,0.0279,94.38,0.168
-Play With Fire,Out of Our Heads,135,Jagger/Richards,Jagger,0.238,0.574,0.413,0.000298,0.242,-9.548,0.0269,108.719,0.0876
-Biggest Mistake,A Bigger Bang,246,Jagger/Richards,Jagger,0.197,0.563,0.861,0,0.231,-3.343,0.0325,113.98,0.807
-When The Whip Comes Down,Some Girls,260,Jagger/Richards,Jagger,0.423,0.501,0.986,0.902,0.205,-1.845,0.0505,130.577,0.821
+Winter,Goats Head Soup,329,Jagger/Richards,Jagger,0.155,0.393,0.597,0.403,0.285,-6.395,0.0307,74.941,0.516
 Sway,Sticky Fingers,233,Jagger/Richards,Jagger,0.221,0.33,0.895,0.737,0.408,-3.435,0.0399,144.945,0.54
-Rough Justice,A Bigger Bang,191,Jagger/Richards,Jagger,0.00317,0.41,0.891,9.95E-05,0.202,-3.125,0.0581,137.976,0.559
-Lady Jane,Flowers,188,Jagger/Richards,Jagger,0.572,0.334,0.312,2.76E-05,0.0749,-16.304,0.0454,205.687,0.296
-Rip This Joint,Exile on Main St.,142,Jagger/Richards,Jagger,0.0387,0.383,0.954,0.00294,0.401,-3.659,0.0734,108.597,0.689
-Corinna ,No Security,226,Taj Mahal/Jesse Ed Davis III,"Jagger, Taj Mahal",0.187,0.522415777,0.769,0.00691,0.2045,-6.493,0.0429,118.944,0.668
-"Cool, Calm & Collected",Between the Buttons,259,Jagger/Richards,Jagger,0.187,0.522415777,0.769,0.00691,0.2045,-6.493,0.0429,118.944,0.668
+Ride 'Em On Down,Blue & Lonesome,168,Eddie Taylor,Jagger,0.14,0.508,0.949,0.0149,0.376,-4.203,0.0866,116.004,0.726
+Sweet Black Angel,Exile on Main St.,178,Jagger/Richards,Jagger,0.65,0.498,0.728,0.000172,0.114,-7.387,0.0373,174.33,0.609
+Lies,Some Girls,191,Jagger/Richards,Jagger,0.441,0.388,0.997,0.941,0.472,-1.426,0.197,162.415,0.535
+Fight,Dirty Work,190,Jagger/Richards/Wood,Jagger,0.296,0.45,0.994,0.0328,0.936,-2.702,0.0594,157.766,0.476
+You Can't Always Get What You Want,Let It Bleed,448,Jagger/Richards,Jagger,0.115,0.364,0.929,0.00893,0.745,-4.521,0.142,141.693,0.509
+Pain In My Heart,"The Rolling Stones, Now!",132,Allen Toussaint (under the pseudonym Naomi Neville),Jagger,0.618,0.463,0.555,0.799,0.136,-8.952,0.0371,176.858,0.825
+Tops,Tattoo You,227,Jagger/Richards,Jagger,0.108,0.599,0.715,4.75E-05,0.0834,-7.107,0.0429,80.541,0.714
+Far Away Eyes,Shine a Light,277,Jagger/Richards,Jagger,0.538,0.663,0.612,0.00743,0.232,-5.633,0.0281,94.669,0.718
+You Gotta Move,Sticky Fingers,153,Fred McDowell/Gary Davis,Jagger,0.724,0.439,0.422,0.203,0.152,-8.384,0.0312,70.283,0.564
+Down Home Girl,"The Rolling Stones, Now!",253,Jerry Leiber/Artie Butler,Jagger,0.672,0.675,0.782,0.692,0.0825,-8.204,0.0276,115.855,0.835
+Time Is On My Side,Got Live If You Want It!,169,Norman Meade/Jimmy Norman,Jagger,0.344,0.23,0.844,0,0.0715,-7.577,0.18,217.578,0.404
+Down The Road A Piece,"The Rolling Stones, Now!",176,Don Raye,Jagger,0.187,0.522415777,0.769,0.00691,0.2045,-6.493,0.0429,118.944,0.668
+Look What You've Done,December's Children (And Everybody's),136,Muddy Waters,Jagger,0.493,0.576,0.569,0.288,0.561,-9.475,0.0507,98.239,0.742
+Parachute Woman,Beggars Banquet,140,Jagger/Richards,Jagger,0.501,0.514,0.624,0.322,0.114,-9.668,0.0541,114.058,0.857
 Love In Vain,Get Yer Ya-Ya's Out!,296,Robert Johnson,Jagger,0.272,0.367,0.474,0.0177,0.113,-11.706,0.0331,184.452,0.314
-2000 Man,Their Satanic Majesties Request,187,Jagger/Richards,Jagger,0.0215,0.456,0.474,0.0245,0.425,-8.098,0.047,122.338,0.563
-Can You Hear The Music,Goats Head Soup,331,Jagger/Richards,Jagger,0.155,0.333,0.622,0.00016,0.234,-7.039,0.0281,73.157,0.467
-Off The Hook,"The Rolling Stones, Now!",155,Jagger/Richards,Jagger,0.169,0.632,0.618,2.17E-06,0.163,-11.015,0.0303,76.641,0.864
-Beast Of Burden,Some Girls,265,Jagger/Richards,Jagger,0.413,0.786,0.87,0.000494,0.0389,-3.875,0.0316,100.66,0.864
-Melody,Black and Blue,350,Jagger/Richards,Jagger,0.632,0.657,0.517,0.00139,0.241,-7.25,0.0417,81.915,0.574
-As Tears Go By,December's Children (And Everybody's),166,Jagger/Richards/Loog Oldham,Jagger,0.734,0.375,0.29,0.00169,0.185,-10.889,0.0293,113.163,0.344
-You Got Me Rocking,No Security,208,Jagger/Richards,Jagger,0.000947,0.501,0.789,0.0361,0.267,-3.633,0.0372,126.253,0.653
-Miss You,Flashpoint,355,Jagger/Richards,Jagger,0.421,0.797,0.718,0.00678,0.236,-4.747,0.0423,109.688,0.811
+Champagne And Reefer ,Shine a Light,358,Muddy Waters,Jagger,0.187,0.522415777,0.769,0.00691,0.2045,-6.493,0.0429,118.944,0.668
+Hoo Doo Blues,Blue & Lonesome,156,Otis Hicks/Jerry West,Jagger,0.358,0.461,0.74,0.138,0.301,-4.961,0.0387,70.003,0.597
+Salt Of The Earth,Beggars Banquet,287,Jagger/Richards,"Jagger, Richards",0.321,0.363,0.787,1.23E-06,0.28,-7.363,0.0454,94.011,0.378
+Tie You Up (The Pain Of Love),Undercover,256,Jagger/Richards,Jagger,0.232,0.61,0.946,0.013,0.372,-4.487,0.0884,117.339,0.82
+Rock And A Hard Place,Flashpoint,291,Jagger/Richards,Jagger,0.00934,0.598,0.957,5.36E-05,0.0902,-4.391,0.0451,129.082,0.864
+Yesterday's Papers,Between the Buttons,125,Jagger/Richards,Jagger,0.139,0.601,0.569,0,0.238,-8.074,0.0316,139.804,0.189
+Dear Doctor,Beggars Banquet,202,Jagger/Richards,Jagger,0.187,0.601,0.463,0,0.132,-8.671,0.0318,126.183,0.526
+Susie Q,The Rolling Stones No.2,110,Dale Hawkins/Stan Lewis/Eleanore Broadwater,Jagger,0.0354,0.502,0.752,0.638,0.158,-9.028,0.0372,81.103,0.968
+High And Dry,Aftermath,186,Jagger/Richards,Jagger,0.0534,0.56,0.5,0.00872,0.242,-13.544,0.0443,114.032,0.772
+It's Not Easy,Aftermath,170,Jagger/Richards,Jagger,0.678,0.646,0.831,2.71E-05,0.571,-11.085,0.0507,135.598,0.811
+This Place Is Empty,A Bigger Bang,196,Jagger/Richards,Richards,0.281,0.592,0.669,1.48E-06,0.185,-6.291,0.0264,90.209,0.51
+I Can't Be Satisfied,The Rolling Stones No.2,206,Muddy Waters,Jagger,0.137,0.485,0.525,0.0146,0.314,-10.585,0.0616,198.549,0.583
