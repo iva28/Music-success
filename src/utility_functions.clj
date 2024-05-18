@@ -22,15 +22,17 @@
 ;Changed is-success because calculations are appended on the end
 (defn is-success
   [seq]
-  (let [counts (reduce (fn [acc el]
-                         (if (= (nth el (- (count el) 2)) 0)
-                           (update acc :zeros inc)
-                           (update acc :ones inc)))
-                       {:zeros 0 :ones 0}
-                       seq)]
-    (if (> (:ones counts) (:zeros counts))
-      1
-      0)))
+  (if (nil? seq)
+    nil
+    (let [counts (reduce (fn [acc el]
+                           (if (= (nth el (- (count el) 2)) 0)
+                             (update acc :zeros inc)
+                             (update acc :ones inc)))
+                         {:zeros 0 :ones 0}
+                         seq)]
+      (if (> (:ones counts) (:zeros counts))
+        1
+        0))))
 
 
 (defn all-songs-but-one
@@ -44,7 +46,9 @@
 
 (defn sort-by-distance
   [seq]
-  (sort-by last seq))
+  (if (and (not (nil? seq)) (every? sequential? seq))
+    (sort-by last seq)
+    nil))
 ;(sort-by-distance songs-trial)
 
 (defn create-song-awards-map
@@ -61,12 +65,14 @@
 
 (defn count-hits-and-not-hits
   [seq]
-  (let [count-hits (atom 0)]
-    (doseq [song seq]
-      (if (= 1 (last song))
-        (swap! count-hits inc)))
-    {:hits @count-hits
-     :non-hits (- (count seq) @count-hits)}))
+  (if (nil? seq)
+    nil
+    (let [count-hits (atom 0)]
+      (doseq [song seq]
+        (if (= 1 (last song))
+          (swap! count-hits inc)))
+      {:hits @count-hits
+       :non-hits (- (count seq) @count-hits)})))
 
 
 (defn format-song-row-number [songs]
@@ -77,7 +83,10 @@
 
 (defn search-by-name-return-song
   [seq song-name]
-  (filter #(= song-name (first %)) seq))
+  (if (or (nil? seq) (nil? song-name))
+    nil
+    (filter #(= song-name (first %)) seq)))
+
 
 (defn search-by-row-number
   [seq row]
@@ -101,7 +110,9 @@
 
 (defn find-same-songs-on-album
   [seq album]
-  (filter #(= (second %) album) seq))
+  (if (or (nil? seq) (nil? album))
+    nil
+    (filter #(= (second %) album) seq)))
 
 (defn print-just-song
   [songs]
