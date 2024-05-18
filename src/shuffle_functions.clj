@@ -30,6 +30,7 @@
   [list-of-lists]
   (let [shuffled-index (shuffle (range (count list-of-lists)))]
     (mapv #(nth list-of-lists %) shuffled-index)))
-(add-random-element-from-list-of-list first-list-list)
+(def generated-list (add-random-element-from-list-of-list first-list-list))
+(print generated-list)
 
 
