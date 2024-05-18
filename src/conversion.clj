@@ -5,7 +5,6 @@
 (def stones-csv (read-csv "src/dataset/shuffled_songs.csv"))
 (def stones-songs (rest stones-csv))
 (def first-song (first stones-songs))
-
 (defn convert-to-float
   [x]
   (cond
@@ -25,9 +24,8 @@
         (range) seq))
 
 
-
 (def updated (convert-to-float-in-list first-song))
-;(print updated)
+
 ;(doseq [el updated]
 ;  (println (type el)))
 
@@ -36,4 +34,4 @@
   [list-list]
   (mapv #(convert-to-float-in-list %) list-list))
 
-;(print (convert-to-float-list-of-lists stones-songs))
+;(def converted-songs (convert-to-float-list-of-lists stones-songs))

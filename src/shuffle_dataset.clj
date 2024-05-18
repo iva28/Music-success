@@ -9,8 +9,6 @@
 (def column-names (first stones-csv))
 (def stones-songs (rest stones-csv))
 (def  shuffled-stones (add-random-element-from-list-of-list stones-songs))
-;(first stones-songs)
-;(first shuffled-stones)
 
 ;Save shuffled
 (save-modified-songs-csv shuffled-stones column-names "src/dataset/shuffled_songs.csv")

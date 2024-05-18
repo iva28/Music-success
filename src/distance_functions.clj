@@ -10,6 +10,7 @@
 (def v2 [4 5])
 ;Check for same vectors
 ;(print (calculate-euclidean-distance v1 v1))
+
 ;Check for different vectors with 2 elements
 ;(print (calculate-euclidean-distance v1 v2))
 
@@ -29,6 +30,6 @@
     (Math/sqrt
       (reduce + (mapv sum-squared-diff v1 v2)))))
 
-(def v1-mixed ["I" 1.0 3.0])
-(def v2-mixed ["I" 4.0 5.0])
-(calculate-euclidean-distance-csv v1-mixed v2-mixed)
+;(def v1-mixed ["I" 1.0 3.0])
+;(def v2-mixed ["I" 4.0 7.0])
+;(calculate-euclidean-distance-csv v1-mixed v2-mixed)
