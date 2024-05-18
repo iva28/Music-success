@@ -24,6 +24,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\src\songs\known_songs.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\src\train_test\train.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
       </map>
     </option>
   </component>

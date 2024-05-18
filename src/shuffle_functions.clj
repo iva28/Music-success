@@ -12,7 +12,7 @@
 (def updated-second (add-random-element-from-list first-list second-list))
 ;(print updated-second)
 
-;Trial with onther values than numbers
+;Trial with other values than numbers
 (def first-list-words [1 "Iva" 3 7 "Sasa"])
 (def second-list-words [])
 
@@ -31,6 +31,6 @@
   (let [shuffled-index (shuffle (range (count list-of-lists)))]
     (mapv #(nth list-of-lists %) shuffled-index)))
 (def generated-list (add-random-element-from-list-of-list first-list-list))
-(print generated-list)
+;(print generated-list)
 
 

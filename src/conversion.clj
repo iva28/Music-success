@@ -26,12 +26,9 @@
 
 (def updated (convert-to-float-in-list first-song))
 
-;(doseq [el updated]
-;  (println (type el)))
 
 ; Converting list of list
 (defn convert-to-float-list-of-lists
   [list-list]
   (mapv #(convert-to-float-in-list %) list-list))
 
-;(def converted-songs (convert-to-float-list-of-lists stones-songs))

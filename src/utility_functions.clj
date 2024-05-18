@@ -1,7 +1,7 @@
 (ns utility_functions
   (:require [conversion :refer [convert-to-float-in-list]]))
 
-(def example-list ["Example" 1 2 3])
+;(def example-list ["Example" 1 2 3])
 
 (defn find-by-name
   [seq name]
@@ -31,9 +31,6 @@
     (if (> (:ones counts) (:zeros counts))
       1
       0)))
-
-(def el1 [[1 0 5] [2 0 5] ["i" 1 ""] [1 8] [9 9 1 5]])
-;(is-success el1)
 
 
 (defn all-songs-but-one
@@ -71,8 +68,6 @@
     {:hits @count-hits
      :non-hits (- (count seq) @count-hits)}))
 
-;(def hits-seq-trial [[0 0] [0 0] [1 1] [1 1] [1 1]])
-;(print (count-hits-and-not-hits hits-seq-trial))
 
 (defn format-song-row-number [songs]
   (map
@@ -101,8 +96,8 @@
 
 (defn format-print-song
   [song]
-  (println "Title:" (first song) "Album name:" (second song)
-           "Songwriter:" (nth song 3) "Lead vocalist:" (nth song 4)))
+  (println "Title:" (first song) "            Album name:" (second song)
+           "            Songwriter:" (nth song 3) "       Lead vocalist:" (nth song 4)))
 
 (defn find-same-songs-on-album
   [seq album]
@@ -112,3 +107,7 @@
   [songs]
   (doseq [song songs]
     (println (first song))))
+
+(defn prepare-unknown-dataset
+  [seq]
+  (map #(vec (butlast %)) seq))

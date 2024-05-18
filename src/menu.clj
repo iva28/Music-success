@@ -9,18 +9,26 @@
             [predictions :refer [predict-songs-success-by-name
                                  top-3-closest-songs-by-name]]))
 
-(def stones-csv (csv_load/read-csv "src/dataset/shuffled_songs.csv"))
+(def stones-csv (csv_load/read-csv "src/songs/unknown_songs.csv"))
 (def stones-songs (conversion/convert-to-float-list-of-lists (rest stones-csv)))
+
+;whole ds for album purposes
+(def album-csv (csv_load/read-csv "src/dataset/shuffled_songs.csv"))
+
+;comparison dataset - known songs and their success
+(def compare-csv (conversion/convert-to-float-list-of-lists
+                   (rest (csv_load/read-csv "src/songs/known_songs.csv"))))
+
+
 (declare main-menu)
 (declare song-menu)
 (declare song-menu-details)
 (declare specific-song-details)
 
-(defn option1
+(defn display-all-songs
   []
-  ;(println "Successfully chosen option 1.")
   (ut/print-sequence (ut/format-song-row-number
-                     (csv_load/modified-songs-and-index "src/dataset/shuffled_songs.csv")))
+                     (csv_load/modified-songs-and-index "src/songs/unknown_songs.csv")))
   (song-menu))
 
 
@@ -40,26 +48,26 @@
   (cond
     (= chosen-option "1") (do
                             (println)
-                            (println (predict-songs-success-by-name stones-songs (first song)))
+                            (println (predict-songs-success-by-name compare-csv song))
                             (println)
                             (specific-song-details song))
     (= chosen-option "2") (do
                             (println)
                             (println "Top 3 closest songs to " (first song) ":")
-                            (println (top-3-closest-songs-by-name stones-songs (first song)))
+                            (top-3-closest-songs-by-name compare-csv song)
                             (println)
                             (specific-song-details song))
     (= chosen-option "3") (do
                             (println)
                             (println "Songs on the same album " (second song) ":")
-                            (ut/print-just-song (utility_functions/find-same-songs-on-album stones-songs (second song)))
+                            (ut/print-just-song (utility_functions/find-same-songs-on-album (rest album-csv) (second song)))
                             (println)
                             (specific-song-details song))
     (= chosen-option "4") (song-menu)
     (= chosen-option "5") (main-menu)
     (= chosen-option "-1") (do (println "Thank you.") (System/exit 0))
     :else (do
-            (println "Uknown option, going back to main menu")
+            (println "Unknown option, going back to main menu")
             (main-menu)))))
 
 
@@ -103,7 +111,7 @@
     (println)
     (let [chosen-option (read-line)]
       (cond
-        (= chosen-option "1") (option1)
+        (= chosen-option "1") (display-all-songs)
         (= chosen-option "-1") (do (println "Thank you.") (System/exit 0))
         :else (do (println "Unknown option") (recur))))))
 

@@ -5,21 +5,18 @@
             [utility_functions :refer [all-songs-but-one
                                        sort-by-distance
                                        is-success
-                                       print-sequence
-                                       count-hits-and-not-hits
-                                       search-by-name-return-song]]))
+                                       count-hits-and-not-hits]]))
 
 (defn calculate-distance-for-chosen-song
   [seq song]
   (map #(conj % (calculate-euclidean-distance-csv song %)) seq))
 
-(def stones-csv (read-csv "src/dataset/modified_stones.csv"))
+(def stones-csv (read-csv "src/songs/known_songs.csv"))
 (def stones-songs (convert-to-float-list-of-lists (rest stones-csv)))
 
 (count-hits-and-not-hits stones-songs)
 ;Imbalanced dataset
 ;Value 0 is dominant
-
 
 (def first-test-list (subvec stones-songs 0 15))
 (def second-test-list (subvec stones-songs 40 64))
@@ -43,26 +40,25 @@
         ;(println "Predicted value:" predicted-value)
         (when (= real-value predicted-value)
           (swap! correct-predictions-counter inc)))
-      ;(println @correct-predictions-counter))
-   (* (float (/ @correct-predictions-counter (count songs))) 100))))
+      ;(println @correct-predictions-counter)
+      )
+   (* (float (/ @correct-predictions-counter (count songs))) 100)))
 
-;second trial
-;(println (calculate-correct-predictions first-test-list 3))
-;(println (calculate-correct-predictions first-test-list 5))
-;(println (calculate-correct-predictions first-test-list 7))
 
-;
+;K=3
 ;(def average-k-3 (atom 0))
 ;(doseq [test-list testing-lists]
 ;  (swap! average-k-3 + (calculate-correct-predictions test-list 3)))
 ;(swap! average-k-3 / (count testing-lists))
-;;(println "Accuracy when k = 3: " @average-k-3)
-;
-;;K = 5
+;(println "Accuracy when k = 3: " @average-k-3)
+;Accuracy when k = 3 is around 78%
+
+;K = 5
 ;(def average-k-5 (atom 0))
 ;(doseq [test-list testing-lists]
 ;  (swap! average-k-5 + (calculate-correct-predictions test-list 5)))
 ;(swap! average-k-5 / (count testing-lists))
 ;(println "Accuracy when k = 5: " @average-k-5)
-
-;No increment in accuracy score between k = 3 and k = 5 so k = 3 will be chosen
+;Accuracy when k = 5 is around 78%
+;No increment in accuracy score between k = 3 and k = 5
+;k= 7 is chosen
