@@ -2,9 +2,11 @@
 
 (defn calculate-euclidean-distance
   [v1 v2]
-  (let [sum-squared-diff (fn [x y] (* (- x y) (- x y)))]
-    (Math/sqrt
-      (reduce + (mapv sum-squared-diff v1 v2)))))
+  (if-not (= (count v1) (count v2))
+    0
+    (let [sum-squared-diff (fn [x y] (* (- x y) (- x y)))]
+      (Math/sqrt
+        (reduce + (mapv sum-squared-diff v1 v2))))))
 
 (def v1 [1 3])
 (def v2 [4 5])
@@ -19,12 +21,14 @@
 ;(print (calculate-euclidean-distance v3 v4))
 
 ;Modifying calculate-euclidean-distance function to adapt to stones csv data
-(defn check-if-float
+(defn check-if-number
   [x]
-  (number? x))
+  (if (nil? x)
+    nil
+    (number? x)))
 
 (defn sum-squared-diff [x y]
-  (if (and (check-if-float x) (check-if-float y))
+  (if (and (check-if-number x) (check-if-number y))
     (* (- x y) (- x y))
     0))
 

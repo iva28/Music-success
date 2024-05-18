@@ -2,30 +2,30 @@
   (:require [clojure.test :refer :all]
             [midje.sweet :refer :all]
             [utility_functions :refer :all]))
-(deftest name-in-seq
+(deftest name-in-seq-test
   (testing "Name is in a sequence"
     (is (= (find-by-name ["Iva"] "Iva") true))))
 
-(deftest name-not-in-seq
+(deftest name-not-in-seq-test
   (testing "Name is not in a sequence"
     (is (= (find-by-name ["Iva"] "Sasa") false))))
 
-(deftest search-empty-seq
+(deftest search-empty-seq-test
   (testing "Search for a name in empty sequence"
     (is (= (find-by-name nil "Sasa") false))))
 
 
-(deftest sort-by-last-element
+(deftest sort-by-last-element-test
   (testing "Sort by last element in a sequence of one list"
     (is (= (sort-by-distance [1 2 4 0]) nil))))
 
-(deftest sort-empty-list
+(deftest sort-empty-list-test
   (testing "Sort by last element in an empty list"
     (is (= (sort-by-distance nil) nil))))
-(deftest sort-list-of-list
+(deftest sort-list-of-list-test
   (testing "Sort by last element in a list of list"
     (is (= (sort-by-distance [[2 1] [9 9] [3 4]]) [[2 1] [3 4] [9 9]]))))
-(deftest sort-list-of-list-with-words
+(deftest sort-list-of-list-with-words-test
   (testing "Sort by last element in a list of list with words"
     (is (= (sort-by-distance [["I" 4 1] [9 "Hello" 9] [3 0 4]])
            [["I" 4 1] [3 0 4] [9 "Hello" 9]]))))
