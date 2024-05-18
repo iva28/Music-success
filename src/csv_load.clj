@@ -1,5 +1,6 @@
 (ns csv_load
   (:require [clojure-csv.core :as csv]
+            [clojure.data.csv :as csv2]
             [clojure.java.io :as io]
             [clojure.string :as str]))
 
@@ -16,6 +17,9 @@
 (def csv-column-names (vec (first stones-csv)))
 (def songs-only (rest stones-csv))
 (count csv-column-names)
+(count songs-only)
+
+(println songs-only)
 
 (defn index-of-element-by-name
   [seq name]
@@ -24,18 +28,31 @@
 (def first-award-column (index-of-element-by-name csv-column-names "British charts"))
 
 ;columns for awards
-(subvec (second stones-csv) first-award-column (count csv-column-names))
+(subvec (first songs-only) first-award-column (count csv-column-names))
 ;check if first song has received some reward
-(some #(not= % "No") (subvec (second stones-csv) first-award-column (count csv-column-names)))
+;(print (first songs-only))
+(some #(not= % "No") (subvec (first songs-only) first-award-column (count csv-column-names)))
 
-(def updated-first-song (if (some #(not= % "No") (subvec (second stones-csv) first-award-column (count csv-column-names)))
-                          (conj (second stones-csv) 1)
-                          (conj (second stones-csv) 0)))
+
+(def updated-first-song (if (some #(not= % "No") (subvec (first songs-only) first-award-column (count csv-column-names)))
+                          (conj (first songs-only) 1)
+                          (conj (first songs-only) 0)))
+(print updated-first-song)
+
+(def song-has-award (nth songs-only 6))
+(println song-has-award)
+(def updated-song-has-award (if (some #(not= % "No") (subvec song-has-award first-award-column (count csv-column-names)))
+                          (conj song-has-award 1)
+                          (conj song-has-award 0)))
+(println updated-song-has-award)
+
 
 (defn check-for-award
   [seq]
   (some #(not= % "No") (subvec seq first-award-column (count csv-column-names))))
 
+
+;(def result-add (add-))
 (defn add-award-flag-for-all
   [songs]
   (map #(if (check-for-award %)
@@ -43,27 +60,12 @@
           (conj % "0")) songs))
 
 (def updated-songs-only (add-award-flag-for-all songs-only))
-;(print (count updated-songs-only))
-;(take 1 updated-songs-only)
-;(print first-award-column)
-;(print (count csv-column-names))
-;(print (count (first updated-songs-only)))
-
-;(subvec (first updated-songs-only) 0 first-award-column)
-;(concat (subvec (first updated-songs-only) 0 first-award-column) (last (first updated-songs-only)))
-;(concat (subvec (second updated-songs-only) 0 first-award-column) (last (second updated-songs-only)))
 
 (defn songs-only-no-awards-columns
   [songs first-award-column]
   (map #(concat (subvec % 0 first-award-column) [(last %)]) songs))
 
 (def modified-songs (songs-only-no-awards-columns updated-songs-only first-award-column))
-;(print (count modified-songs))
-;(print (count (first modified-songs)))
-;(println (first modified-songs))
-
-;(print (count csv-column-names))
-;(print first-award-column)
 
 (defn modify-column-names
   [songs first-award-column]
@@ -71,18 +73,12 @@
 
 ;(subvec csv-column-names 0 first-award-column)
 (def modified-column-names (conj (subvec csv-column-names 0 first-award-column) "Won award"))
-;(print modified-column-names)
 
 ;SAVING NEW CSV
 (defn save-modified-songs-csv [songs column-names filename]
   (with-open [writer (io/writer filename)]
-    (.write writer (str/join "," column-names))
-    (.write writer "\n")
-    (doseq [song songs]
-      (.write writer (str/join "," song))
-      (.write writer "\n"))))
-
-(save-modified-songs-csv modified-songs modified-column-names "src/dataset/modified_stones.csv")
+    (csv2/write-csv writer (conj (list* songs) column-names))))
+(write-csv modified-songs modified-column-names "src/dataset/modified_stones.csv")
 
 ;Load just song names
 (defn read-songs-only [file]

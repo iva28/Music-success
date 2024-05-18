@@ -6,8 +6,10 @@
   :dependencies [[org.clojure/clojure "1.11.1"]
                  [org.clojure/data.csv "1.0.1"]
                  [clojure-csv "2.0.2"]
-                 [org.clojure/tools.namespace "1.1.0"]]
+                 [org.clojure/tools.namespace "1.1.0"]
+                 [midje "1.10.10"]]
   :main ^:skip-aot mussic-success.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all
-                       :jvm-opts ["-Dclojure.compiler.direct-linking=true"]}})
+                       :jvm-opts ["-Dclojure.compiler.direct-linking=true"]}}
+  :repl-options {:init-ns mussic-success.core})
