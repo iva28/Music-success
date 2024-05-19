@@ -36,7 +36,9 @@
   [song]
     (println "======================================== SONG'S SPECIFICATIONS ========================================")
     (println "Current song:")
+    (print "\u001B[32m")
     (utility_functions/format-print-song song)
+    (print "\u001B[0m")
     (println)
     (println "1. Find if the song is a hit")
     (println "2. Find 3 most similar songs")
@@ -50,15 +52,19 @@
     (= chosen-option "1") (do
                             (println)
                             (println "************************************** SONG'S PREDICTION ****************************************")
+                            (print "\u001B[34m")
                             (println (predict-songs-success-by-name compare-csv song))
                             (println)
+                            (print "\u001B[0m")
                             (Thread/sleep 2000)
                             (specific-song-details song))
     (= chosen-option "2") (do
                             (println)
                             (println "************************************** SONG'S TOP 3 MATCHES *******************************************")
                             (println "Top 3 closest songs to " (first song) ":")
+                            (print "\u001B[34m")
                             (top-3-closest-songs-by-name compare-csv song)
+                            (print "\u001B[0m")
                             (println)
                             (Thread/sleep 1000)
                             (specific-song-details song))
@@ -66,16 +72,19 @@
                             (println)
                             (println "************************************** SONG'S ON THE SAME ALBUM *******************************************")
                             (println "Songs on the same album " (second song) ":\n")
+                            (print "\u001B[34m")
                             (ut/print-just-song (utility_functions/find-same-songs-on-album (rest album-csv) (second song)))
+                            (print "\u001B[0m")
                             (println)
                             (Thread/sleep 1000)
                             (specific-song-details song))
     (= chosen-option "4") (song-menu)
     (= chosen-option "5") (main-menu)
-    (= chosen-option "-1") (do (println "Thank you :)") (System/exit 0))
-    :else (do
+    (= chosen-option "-1") (do (print "\u001B[35m") (println "Thank you.") (print "\u001B[0m") (System/exit 0))
+    :else (do (print "\u001B[31m")
             (println "Unknown option, going back to main menu")
-            (main-menu)))))
+              (print "\u001B[0m")
+              (main-menu)))))
 
 
 (defn song-menu-details []
@@ -92,11 +101,13 @@
            (<= 1 (Integer/parseInt chosen-option) (count stones-songs)))
      (specific-song-details (utility_functions/search-by-row-number stones-songs chosen-option))
       (= chosen-option "2") (main-menu)
-      (= chosen-option "-1") (do (println "Thank you :)") (main-menu))
-      :else (do (println "If you want to find out about a song type a number between 1 and 29")
+      (= chosen-option "-1") (do (print "\u001B[35m") (println "Thank you.") (print "\u001B[0m") (System/exit 0))
+      :else (do (print "\u001B[31m")
+              (println "If you want to find out about a song type a number between 1 and 29")
                 (println "If you want to go back to main menu enter 2")
                 (println "If you want to exit the program enter -1")
                 (println "Main menu will appear in 2 second for you to try again")
+                (print "\u001B[0m")
                 (Thread/sleep 2000)
                 (song-menu)))))
 
@@ -111,11 +122,13 @@
     (cond
       (= chosen-option "1") (song-menu-details)
       (= chosen-option "2") (main-menu)
-      (= chosen-option "-1") (do (println "Thank you :)") (System/exit 0))
-      :else (do (println "If you want to find out about any song enter 1")
+      (= chosen-option "-1") (do (print "\u001B[35m") (println "Thank you.") (print "\u001B[0m") (System/exit 0))
+      :else (do (print "\u001B[31m")
+                (println "If you want to find out about any song enter 1")
                 (println "If you want to go to main menu enter 2")
                 (println "If you want to exit the program enter -1")
                 (println "Try again...")
+                (print "\u001B[0m")
                 (Thread/sleep 1000)
                 (song-menu)))))
 
@@ -132,8 +145,10 @@
     (let [chosen-option (read-line)]
       (cond
         (= chosen-option "1") (display-all-songs)
-        (= chosen-option "-1") (do (println "Thank you.") (System/exit 0))
-        :else (do (println "Main menu will appear soon for you to try again")
+        (= chosen-option "-1") (do (print "\u001B[35m") (println "Thank you.") (print "\u001B[0m") (System/exit 0))
+        :else (do (print "\u001B[31m")
+                  (println "Main menu will appear soon for you to try again")
+                  (print "\u001B[0m")
                   (Thread/sleep 1000)
                   (recur))))))
 
