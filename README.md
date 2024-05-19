@@ -1,6 +1,9 @@
 # mussic-success
 
-FIXME: description
+Music Success App is a Clojure-based application designed to help users evaluate the potential success of songs from The Rolling Stones. With this app, users can:
+- Get prediction on whether a song will be a hit.
+- Discover the top 3 most similar songs to any given track.
+- Explore other songs on the same album.
 
 ## Installation
 
