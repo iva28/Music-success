@@ -12,7 +12,7 @@
   [seq song]
   (map #(conj % (calculate-euclidean-distance-csv song %)) seq))
 
-(def stones-csv (read-csv "src/songs/known_songs.csv"))
+(def stones-csv (read-csv "src/dataset/shuffled_songs.csv"))
 (def stones-songs (convert-to-float-list-of-lists (rest stones-csv)))
 
 (count-hits-and-not-hits stones-songs)
@@ -52,7 +52,7 @@
 ;  (swap! average-k-3 + (calculate-correct-predictions test-list 3)))
 ;(swap! average-k-3 / (count testing-lists))
 ;(println "Accuracy when k = 3: " @average-k-3)
-;Accuracy when k = 3 is around 78%
+;Accuracy when k = 3 is around 73%
 
 ;K = 5
 ;(def average-k-5 (atom 0))
@@ -60,6 +60,16 @@
 ;  (swap! average-k-5 + (calculate-correct-predictions test-list 5)))
 ;(swap! average-k-5 / (count testing-lists))
 ;(println "Accuracy when k = 5: " @average-k-5)
-;Accuracy when k = 5 is around 78%
+
 ;No increment in accuracy score between k = 3 and k = 5
+
+
+;K = 7
+;(def average-k-7 (atom 0))
+;(doseq [test-list testing-lists]
+;  (swap! average-k-7 + (calculate-correct-predictions test-list 7)))
+;(swap! average-k-7 / (count testing-lists))
+;(println "Accuracy when k = 5: " @average-k-7)
+;No increment in accuracy score between k = 5 and k = 7
+
 ;k= 7 is chosen

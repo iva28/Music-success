@@ -1,8 +1,10 @@
 (ns shuffle_functions)
+
 (def first-list [1 2 3])
 (def second-list [])
 
 (defn add-random-element-from-list
+  "Shuffling elements of first list and storing them in second."
   [first-list second-list]
   (let [list-size (count first-list)
         random-index (shuffle (range list-size))
@@ -29,6 +31,7 @@
 ;(print updated-second-list-list)
 
 (defn add-random-element-from-list-of-list
+  "Shuffling list of lists."
   [list-of-lists]
   (let [shuffled-index (shuffle (range (count list-of-lists)))
         result (mapv #(nth list-of-lists %) shuffled-index)]

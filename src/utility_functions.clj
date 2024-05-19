@@ -1,7 +1,6 @@
 (ns utility_functions
   (:require [conversion :refer [convert-to-float-in-list]]))
 
-;(def example-list ["Example" 1 2 3])
 
 (defn find-by-name
   [seq name]
@@ -36,6 +35,7 @@
 
 
 (defn all-songs-but-one
+  "Retrieving all songs but the one provided."
   [seq song]
   ;(remove #(find-by-name % song) seq)
   (convert-to-float-in-list(remove #(find-by-name % song) seq)))
@@ -120,5 +120,6 @@
     (println (first song))))
 
 (defn prepare-unknown-dataset
+  "Removing Won award column values for unknown songs."
   [seq]
   (map #(vec (butlast %)) seq))
