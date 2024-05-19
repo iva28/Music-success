@@ -124,6 +124,7 @@
 (defn main-menu []
   (loop []
     (println)
+    (println "======================================== START MENU ========================================")
     (println "Choose an option:")
     (println "1. Display all songs:")
     (println "2. For exiting the program enter -1")
