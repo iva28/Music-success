@@ -27,7 +27,6 @@
 (def updated (convert-to-float-in-list first-song))
 
 
-; Converting list of list
 (defn convert-to-float-list-of-lists
   [list-list]
   (mapv #(convert-to-float-in-list %) list-list))
