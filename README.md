@@ -29,7 +29,13 @@ When users start the app with the lein run command, they are first asked to ente
 #### Song menu
 ![song-menu](img/song_menu.png)
 
+#### Song specifications
+![song-spec](img/song_spec.png)
+When the user enters 1, the algorithm predicts song success.
+![song-pred](img/song_pred.png)
 
+## Testing
+I utilized the Clojure.test library to test several files.
 ## License
 
 Copyright © 2024 FIXME
