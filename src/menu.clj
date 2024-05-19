@@ -82,9 +82,10 @@
     (= chosen-option "5") (main-menu)
     (= chosen-option "-1") (do (print "\u001B[35m") (println "Thank you.") (print "\u001B[0m") (System/exit 0))
     :else (do (print "\u001B[31m")
-            (println "Unknown option, going back to main menu")
+              (println "Unknown option, try again")
+              (Thread/sleep 1000)
               (print "\u001B[0m")
-              (main-menu)))))
+              (specific-song-details song)))))
 
 
 (defn song-menu-details []
