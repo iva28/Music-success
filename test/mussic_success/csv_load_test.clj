@@ -2,9 +2,6 @@
   (:require [clojure.test :refer :all]
             [csv_load :refer :all]))
 
-;(deftest check-if-number-nil-test
-;   (testing "Check if nil is number"
-;     (is (= nil (check-if-number nil))))))
 
 (deftest check-for-award-nil-test
   (testing "Checking for an award when the award is nil"
@@ -22,4 +19,13 @@
   (testing "Check for award when awards are present"
     (is (= (check-for-award (vec (concat (repeat 23 "No") ["Yes"]))) true))))
 
+(deftest index-of-element-by-name-right-check
+  (testing "Check if it returns the index of a given name"
+    (is (= (index-of-element-by-name ["A" "B" "C"] "A") 0))))
+(deftest index-of-element-by-name-nil-check
+  (testing "Check if it returns the index of a given name"
+    (is (= (index-of-element-by-name ["A" "B" "C"] nil) nil))))
+(deftest index-of-element-by-name-songs-nil-check
+  (testing "Check if it returns the index of a given name"
+    (is (= (index-of-element-by-name nil "A") nil))))
 

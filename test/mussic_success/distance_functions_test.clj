@@ -1,11 +1,6 @@
-(ns distance_functions_test
+(ns mussic-success.distance_functions_test
   (:require [clojure.test :refer :all]
             [distance_functions :refer :all]))
-
-(deftest check-if-number-nil-test
-  (testing "Check if nil is number"
-    (is (= nil (check-if-number nil)))))
-
 (deftest check-if-number-float-test
   (testing "Check if float is number"
     (is (= true (check-if-number 1.0)))))

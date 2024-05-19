@@ -19,7 +19,9 @@
 
 (defn index-of-element-by-name
   [seq name]
-   (.indexOf seq name))
+  (if (or (nil? seq) (nil? name))
+    nil
+    (.indexOf seq name)))
 
 (def first-award-column (index-of-element-by-name csv-column-names "British charts"))
 
