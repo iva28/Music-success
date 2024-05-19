@@ -16,7 +16,7 @@ The app uses a CSV file named stones_analysis.csv, which was collected for a pre
 If a song has been present on any of these charts, it is labeled as a hit.
 
 ## Data handling
-Songs are shuffled and split into two sets: known and unknown, with the unknown set making up 10% of the known set. Even though the labels for unknown songs are familiar, this setup simulates a situation as if we didn't know them. When a user chooses a song, its prediction is based upon all the known songs.
+Songs are shuffled and split into two sets: known and unknown, with the unknown set making up 10% of the whole set. Even though the labels for unknown songs are familiar, this setup simulates a situation as if we didn't know them. When a user chooses a song, its prediction is based upon all the known songs.
 
 ## Usage
 When users start the app with the lein run command, they are first asked to enter their name. After entering their name, they are provided with a start menu. Based on their choices, they can access the main menu, song menu, and song specifications menu.
