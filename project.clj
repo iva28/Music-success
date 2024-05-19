@@ -12,3 +12,5 @@
   :profiles {:uberjar {:aot :all
                        :jvm-opts ["-Dclojure.compiler.direct-linking=true"]}}
   :repl-options {:init-ns mussic-success.core})
+
+;JDK 21
