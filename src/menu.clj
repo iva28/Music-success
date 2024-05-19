@@ -56,7 +56,7 @@
                             (println (predict-songs-success-by-name compare-csv song))
                             (println)
                             (print "\u001B[0m")
-                            (Thread/sleep 2000)
+                            (Thread/sleep 1000)
                             (specific-song-details song))
     (= chosen-option "2") (do
                             (println)
@@ -109,7 +109,7 @@
                 (println "If you want to exit the program enter -1")
                 (println "Main menu will appear in 2 second for you to try again")
                 (print "\u001B[0m")
-                (Thread/sleep 2000)
+                (Thread/sleep 1000)
                 (song-menu)))))
 
 (defn song-menu []
