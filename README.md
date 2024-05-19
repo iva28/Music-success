@@ -3,6 +3,8 @@ Music Success App is a Clojure-based application designed to help users evaluate
 - Get prediction on whether a song will be a hit.
 - Discover the top 3 most similar songs to any given track.
 - Explore other songs on the same album.
+
+The JDK used in this project is #### JDK 21.
   
 ## Predictions
 Predictions are based on a nearest neighbor algorithm. The distance between a song and other songs is calculated using Euclidean distance. The top 7 closest songs are selected, and based on their classifications, the starting song is classified as either a hit or not a hit.
