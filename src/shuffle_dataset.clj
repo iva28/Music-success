@@ -13,7 +13,6 @@
 (save-modified-songs-csv shuffled-stones column-names "src/dataset/shuffled_songs.csv")
 
 
-
 ;Splitting shuffled dataset into known and known songs
 ;Idea is to use knn algorithm to classify songs into hits and not hits
 (def shuffled-ds (read-csv "src/dataset/shuffled_songs.csv"))

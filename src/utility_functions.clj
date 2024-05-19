@@ -6,19 +6,6 @@
   [seq name]
   (= name (first seq)))
 
-;(defn is-success
-;  [seq]
-;  (let [counts (reduce (fn [acc el]
-;                         (if (= (last el) 0)
-;                           (update acc :zeros inc)
-;                           (update acc :ones inc)))
-;                       {:zeros 0 :ones 0}
-;                       seq)]
-;    (if (> (:ones counts) (:zeros counts))
-;      1
-;      0)))
-
-;Changed is-success because calculations are appended on the end
 (defn is-success
   [seq]
   (if (nil? seq)
