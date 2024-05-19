@@ -34,6 +34,7 @@
 
 (defn specific-song-details
   [song]
+     (println "======================================== SONG'S SPECIFICATIONS ========================================")
     (println "Current song:")
     (utility_functions/format-print-song song)
     (println)
@@ -65,7 +66,7 @@
                             (specific-song-details song))
     (= chosen-option "4") (song-menu)
     (= chosen-option "5") (main-menu)
-    (= chosen-option "-1") (do (println "Thank you.") (System/exit 0))
+    (= chosen-option "-1") (do (println "Thank you :)") (System/exit 0))
     :else (do
             (println "Unknown option, going back to main menu")
             (main-menu)))))
@@ -73,7 +74,8 @@
 
 (defn song-menu-details []
   (println)
-  (println "1. Enter row number of a song you want to find more about")
+  (println "======================================== SONG MENU ========================================")
+  (println "1. Enter row number of a song you want to find more about (1-29)")
   (println "2. Go back to song main menu")
   (println "3. Go back to main menu")
   (println "4. For exiting the program enter -1")
@@ -84,11 +86,15 @@
            (<= 1 (Integer/parseInt chosen-option) (count stones-songs)))
      (specific-song-details (utility_functions/search-by-row-number stones-songs chosen-option))
       (= chosen-option "2") (main-menu)
-      (= chosen-option "-1") (do (println "Thank you.") (main-menu))
-      :else (do (println "Unknown option") (song-menu)))))
+      (= chosen-option "-1") (do (println "Thank you :)") (main-menu))
+      :else (do (println "If you want to find out about a song type a number between 1 and 29")
+                (println "If you want to go back to main menu enter 2")
+                (println "If you want to exit the program enter -1")
+                (song-menu)))))
 
 (defn song-menu []
   (println)
+  (println "======================================== MAIN MENU ========================================")
   (println "1.Do you want to find out more about any song?")
   (println "2. Go back to main menu")
   (println "3. For exiting the program enter -1")
@@ -97,7 +103,7 @@
     (cond
       (= chosen-option "1") (song-menu-details)
       (= chosen-option "2") (main-menu)
-      (= chosen-option "-1") (do (println "Thank you.") (main-menu))
+      (= chosen-option "-1") (do (println "Thank you :)") (main-menu))
       :else (do (println "Unknown option") (song-menu)))))
 
 

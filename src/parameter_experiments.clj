@@ -8,6 +8,7 @@
                                        count-hits-and-not-hits]]))
 
 (defn calculate-distance-for-chosen-song
+  "Calculating euclidean distance between chosen song and other songs"
   [seq song]
   (map #(conj % (calculate-euclidean-distance-csv song %)) seq))
 

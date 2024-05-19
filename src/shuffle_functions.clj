@@ -28,8 +28,12 @@
 
 (defn add-random-element-from-list-of-list
   [list-of-lists]
-  (let [shuffled-index (shuffle (range (count list-of-lists)))]
-    (mapv #(nth list-of-lists %) shuffled-index)))
+  (let [shuffled-index (shuffle (range (count list-of-lists)))
+        result (mapv #(nth list-of-lists %) shuffled-index)]
+    (if (= result list-of-lists)
+      (add-random-element-from-list-of-list list-of-lists)
+      result
+      )))
 (def generated-list (add-random-element-from-list-of-list first-list-list))
 ;(print generated-list)
 

@@ -1,6 +1,7 @@
 (ns distance_functions)
 
 (defn calculate-euclidean-distance
+  "Calculating euclidean distance between two vectors"
   [v1 v2]
   (if-not (= (count v1) (count v2))
     0
@@ -22,17 +23,20 @@
 
 ;Modifying calculate-euclidean-distance function to adapt to stones csv data
 (defn check-if-number
+  "Checking if x is a number"
   [x]
   (if (nil? x)
     nil
     (number? x)))
 
 (defn sum-squared-diff [x y]
+  "Calculating sum of squared difference"
   (if (and (check-if-number x) (check-if-number y))
     (* (- x y) (- x y))
     0))
 
 (defn calculate-euclidean-distance-csv
+  "Calculation of euclidean distance adapted to input from csv file"
   [v1 v2]
   (Math/sqrt
     (reduce +
