@@ -6,7 +6,6 @@
   :dependencies [[org.clojure/clojure "1.11.1"]
                  [org.clojure/data.csv "1.0.1"]
                  [clojure-csv "2.0.2"]
-                 [org.clojure/tools.namespace "1.1.0"]
                  [midje "1.10.10"]]
   :main ^:skip-aot mussic-success.core
   :target-path "target/%s"

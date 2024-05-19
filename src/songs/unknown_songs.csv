@@ -1,30 +1,30 @@
 Title,Album name,Song duration,Songwriter s ,Lead vocal s ,acousticness,danceability,energy,instrumentalness,liveness,loudness,speechiness,tempo,valence,Won award
-Winning Ugly,Dirty Work,272,Jagger/Richards,Jagger,0.342,0.541,0.935,0.00404,0.693,-2.991,0.0827,134.071,0.642
-Sleep Tonight,Dirty Work,313,Jagger/Richards,Jagger,0.0653,0.389,0.652,0.000106,0.273,-5.291,0.0298,147.954,0.335
-Dance Little Sister,It's Only Rock 'n' Roll,251,Jagger/Richards,Jagger,0.00648,0.46,0.961,0.182,0.27,-4.254,0.0817,152.776,0.893
-What A Shame,"The Rolling Stones, Now!",186,Jagger/Richards,Jagger,0.165,0.68,0.565,0.148,0.14,-10.131,0.0298,127.011,0.89
-Love Is Strong,Voodoo Lounge,230,Jagger/Richards,Jagger,0.0169,0.53,0.855,0.238,0.0628,-5.116,0.0461,110.14,0.511
-Lies,Some Girls,191,Jagger/Richards,Jagger,0.441,0.388,0.997,0.941,0.472,-1.426,0.197,162.415,0.535
-Key To The Highway,Dirty Work,33,Big Bill Broonzy/Charles Segar,instrumental,0.994,0.596,0.129,0.848,0.132,-24.466,0.16,102.803,0.461
-Ride 'Em On Down,Blue & Lonesome,168,Eddie Taylor,Jagger,0.14,0.508,0.949,0.0149,0.376,-4.203,0.0866,116.004,0.726
-All Sold Out,Between the Buttons,138,Jagger/Richards,Jagger,0.505,0.691,0.671,4.48E-06,0.107,-9.173,0.0396,117.514,0.769
-Hang Fire,Tattoo You,140,Jagger/Richards,Jagger,0.0299,0.461,0.906,0.0104,0.319,-4.369,0.0356,152.206,0.939
-Break The Spell,Steel Wheels,187,Jagger/Richards,Jagger,0.0846,0.422,0.918,0.0149,0.379,-7.159,0.0453,193.076,0.78
-No Use In Crying,Tattoo You,205,Jagger/Richards/Wood,Jagger,0.58,0.636,0.455,0.000523,0.159,-6.493,0.0338,143.853,0.432
-Time Waits For No One,It's Only Rock 'n' Roll,398,Jagger/Richards,Jagger,0.0784,0.533,0.781,0.000273,0.063,-4.602,0.0316,118.316,0.815
-Susie Q,The Rolling Stones No.2,110,Dale Hawkins/Stan Lewis/Eleanore Broadwater,Jagger,0.0354,0.502,0.752,0.638,0.158,-9.028,0.0372,81.103,0.968
-Please Go Home,Flowers,199,Jagger/Richards,Jagger,0.599,0.495,0.735,0.00043,0.215,-8.561,0.0408,112.167,0.736
+Jig-Saw Puzzle,Beggars Banquet,366,Jagger/Richards,Jagger,0.356,0.399,0.645,4.75E-06,0.0938,-10.785,0.0467,113.728,0.785
+Flip The Switch,No Security,252,Jagger/Richards,Jagger,0.000119,0.388,0.928,0.00162,0.364,-4.504,0.0495,163.15,0.594
+Hate To See You Go,Blue & Lonesome,200,Little Walter,Jagger,0.399,0.418,0.828,0.669,0.146,-5.173,0.122,184.436,0.376
+Biggest Mistake,A Bigger Bang,246,Jagger/Richards,Jagger,0.197,0.563,0.861,0,0.231,-3.343,0.0325,113.98,0.807
+Dead Flowers,Sticky Fingers,245,Jagger/Richards,Jagger,0.33,0.54,0.862,1.70E-05,0.156,-4.599,0.0284,130.34,0.931
 Loving Cup,Exile on Main St.,265,Jagger/Richards,Jagger,0.636,0.471,0.843,0.0402,0.773,-5.702,0.041,156.695,0.632
-Take It Or Leave It,Flowers,167,Jagger/Richards,Jagger,0.154,0.648,0.538,0.000125,0.165,-12.537,0.0283,104.408,0.763
-Winter,Goats Head Soup,329,Jagger/Richards,Jagger,0.155,0.393,0.597,0.403,0.285,-6.395,0.0307,74.941,0.516
-Down In The Hole,Emotional Rescue,238,Jagger/Richards,Jagger,0.0119,0.293,0.712,0.902,0.348,-6.122,0.0908,186.898,0.249
+Sparks Will Fly,Voodoo Lounge,196,Jagger/Richards,Jagger,0.00589,0.426,0.956,0.00174,0.284,-4.151,0.102,154.886,0.664
+Prodigal Son,Beggars Banquet,172,Rev. Robert Wilkins,Jagger,0.559,0.604,0.567,0.0074,0.137,-10.563,0.0627,107.86,0.108
+Beast Of Burden,Some Girls,265,Jagger/Richards,Jagger,0.413,0.786,0.87,0.000494,0.0389,-3.875,0.0316,100.66,0.864
+My Girl,Flowers,159,Smokey Robinson/Ronald White,Jagger,0.679,0.589,0.567,0.175,0.335,-7.774,0.0342,110.531,0.731
+Think,Aftermath,190,Jagger/Richards,Jagger,0.00464,0.61,0.612,0.0592,0.167,-11.976,0.0435,133.006,0.636
+Let It Bleed,Let It Bleed,327,Jagger/Richards,Jagger,0.451,0.564,0.674,0.00348,0.255,-8.177,0.0292,116.266,0.817
+Mannish Boy ,Love You Live,384,Muddy Waters/Mel London/Bo Diddley,Jagger,0.716,0.326,0.794,0.0374,0.815,-4.868,0.0908,202.252,0.824
+Indian Girl,Emotional Rescue,263,Jagger/Richards,Jagger,0.0478,0.735,0.494,0.0217,0.161,-5.93,0.039,97.538,0.467
+No Expectations,Beggars Banquet,236,Jagger/Richards,Jagger,0.568,0.468,0.285,0.0146,0.138,-12.944,0.0267,92.415,0.301
 Torn And Frayed,Exile on Main St.,258,Jagger/Richards,"Jagger, Richards",0.664,0.454,0.766,0.904,0.594,-3.862,0.0272,90.677,0.776
-Who's Been Sleeping Here,Between the Buttons,226,Jagger/Richards,Jagger,0.187,0.522415777,0.769,0.00691,0.2045,-6.493,0.0429,118.944,0.668
-Thru And Thru,Voodoo Lounge,375,Jagger/Richards,Richards,0.722,0.386,0.316,1.22E-05,0.0862,-9.595,0.0308,83.51,0.191
-It's Not Easy,Aftermath,170,Jagger/Richards,Jagger,0.678,0.646,0.831,2.71E-05,0.571,-11.085,0.0507,135.598,0.811
-Just Your Fool,Blue & Lonesome,136,Buddy Johnson,Jagger,0.329,0.547,0.903,0.216,0.388,-3.832,0.0579,116.152,0.842
-Almost Hear You Sigh,Steel Wheels,277,Jagger/Richards/Jordan,Jagger,0.275,0.648,0.815,0.000193,0.076,-5.391,0.0232,102.259,0.759
-All Down The Line,Exile on Main St.,230,Jagger/Richards,Jagger,0.00154,0.239,0.963,0.47,0.795,-4.126,0.0552,83.126,0.664
-Like A Rolling Stone ,Stripped,338,Bob Dylan,Jagger,0.187,0.522415777,0.769,0.00691,0.2045,-6.493,0.0429,118.944,0.668
-Melody,Black and Blue,350,Jagger/Richards,Jagger,0.632,0.657,0.517,0.00139,0.241,-7.25,0.0417,81.915,0.574
-Around And Around,Love You Live,232,Chuck Berry,Jagger,0.448,0.312,0.617,9.74E-05,0.274,-11.783,0.0672,183.436,0.789
+I Just Want To See His Face,Exile on Main St.,173,Jagger/Richards,Jagger,0.689,0.654,0.542,0.584,0.204,-14.696,0.0419,78.015,0.877
+You Can't Catch Me,"The Rolling Stones, Now!",220,Chuck Berry,Jagger,0.0611,0.659,0.872,0.00354,0.348,-11.355,0.0478,104.217,0.84
+Black Limousine,Tattoo You,213,Jagger/Richards/Wood,Jagger,0.152,0.511,0.892,0.262,0.638,-4.701,0.0588,108.959,0.869
+Stray Cat Blues,Get Yer Ya-Ya's Out!,226,Jagger/Richards,Jagger,0.0227,0.346,0.797,0.00212,0.0834,-9.335,0.0522,104.924,0.427
+Little T&A,Tattoo You,203,Jagger/Richards,Richards,0.132,0.53,0.888,0.0321,0.425,-5.128,0.0282,136.123,0.833
+Everybody Needs Somebody To Love,"The Rolling Stones, Now!",180,Jerry Wexler/Bert Berns/Solomon Burke,Jagger,0.273,0.531,0.744,0.00318,0.128,-7.58,0.07,177.862,0.778
+Salt Of The Earth,Beggars Banquet,287,Jagger/Richards,"Jagger, Richards",0.321,0.363,0.787,1.23E-06,0.28,-7.363,0.0454,94.011,0.378
+It Won't Take Long,A Bigger Bang,234,Jagger/Richards,Jagger,0.0199,0.474,0.927,1.46E-05,0.113,-3.579,0.068,117.37,0.576
+Neighbours,Tattoo You,213,Jagger/Richards,Jagger,0.17,0.431,0.94,0.00155,0.315,-5.868,0.0775,166.156,0.759
+Look What The Cat Dragged In,A Bigger Bang,237,Jagger/Richards,Jagger,0.00885,0.506,0.98,0.00332,0.138,-2.494,0.145,117.003,0.556
+Time Waits For No One,It's Only Rock 'n' Roll,398,Jagger/Richards,Jagger,0.0784,0.533,0.781,0.000273,0.063,-4.602,0.0316,118.316,0.815
+Stupid Girl,Aftermath,175,Jagger/Richards,Jagger,0.188,0.7,0.811,0.55,0.256,-11.837,0.0589,130.895,0.891
+Might As Well Get Juiced,Bridges to Babylon,323,Jagger/Richards,Jagger,0.00331,0.467,0.905,0.0504,0.195,-6.441,0.0785,169.387,0.565
