@@ -1,4 +1,4 @@
-(ns mussic-success.distance_functions_test
+(ns mussic-success.distance-functions-test
   (:require [clojure.test :refer :all]
             [distance_functions :refer :all]))
 (deftest check-if-number-float-test
