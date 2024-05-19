@@ -20,6 +20,14 @@ Songs are shuffled and split into two sets: known and unknown, with the unknown 
 When users start the app with the lein run command, they are first asked to enter their name. After entering their name, they are provided with a start menu. Based on their choices, they can access the main menu, song menu, and song specifications menu.
 
 ## Examples
+#### Start menu
+![start-menu](img/start_menu.png)
+
+#### Main menu
+![main-menu](img/main_menu.png)
+
+#### Song menu
+![song-menu](img/song_menu.png)
 
 
 ## License
