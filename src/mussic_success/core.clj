@@ -7,4 +7,4 @@
   [& args]
   (menu/main-menu))
 
-;(-main)
+(-main)

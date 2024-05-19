@@ -9,9 +9,9 @@
       (is (= (count seq1) (count seq2)))
       (is (= (set seq1) (set seq2)))
       (is (not= seq1 seq2)))))
-(deftest shuffle-lis-of-lists-functions-test
+(deftest shuffle-list-of-lists-functions-test
   (testing "Check if list of lists is shuffled"
-    (let [seq1 [[1 2] [ 3 4]]
+    (let [seq1 [[1 2] [3 4] [3 4 5]]
           seq2 (add-random-element-from-list-of-list seq1)]
       (is (= (count seq1) (count seq2)))
       (is (= (set seq1) (set seq2)))
